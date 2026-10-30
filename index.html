@@ -13,14 +13,13 @@
       theme: {
         extend: {
           colors: {
-            pureBlack: '#000000',
-            appleDark: '#0a0a0c',
-            appleGray: '#16161a',
-            appleCard: 'rgba(255, 255, 255, 0.04)',
-            appleBorder: 'rgba(255, 255, 255, 0.12)',
-            appleBorderHover: 'rgba(255, 255, 255, 0.3)',
-            appleTextMuted: '#86868b',
-            appleWhite: '#f5f5f7'
+            pureWhite: '#ffffff',
+            appleCanvas: '#f5f5f7',
+            appleCardLight: 'rgba(255, 255, 255, 0.72)',
+            appleBorderLight: 'rgba(0, 0, 0, 0.08)',
+            appleBorderHover: 'rgba(0, 0, 0, 0.22)',
+            appleTextDark: '#1d1d1f',
+            appleTextMuted: '#86868b'
           },
           fontFamily: {
             sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'Helvetica Neue', 'sans-serif'],
@@ -31,10 +30,10 @@
     }
   </script>
   <style>
-    /* Apple Liquid Glassmorphism & Monochrome Aesthetics */
+    /* Apple Liquid Glassmorphism (Pure White / Light Mode Edition) */
     body {
-      background-color: #000000;
-      color: #f5f5f7;
+      background-color: #f5f5f7;
+      color: #1d1d1f;
       overflow-x: hidden;
       scroll-snap-type: y mandatory;
     }
@@ -46,12 +45,12 @@
       position: relative;
     }
 
-    /* Ambient Liquid Glowing Orbs */
-    .liquid-orb-1 {
+    /* Ambient Liquid Glowing Orbs (Soft Silver & Pure Mist) */
+    .liquid-orb-light-1 {
       position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 50%, transparent 70%);
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.035) 0%, rgba(0, 0, 0, 0.008) 50%, transparent 70%);
       filter: blur(80px);
       border-radius: 50%;
       pointer-events: none;
@@ -59,11 +58,11 @@
       animation: liquidFloat1 18s ease-in-out infinite alternate;
     }
 
-    .liquid-orb-2 {
+    .liquid-orb-light-2 {
       position: absolute;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.005) 50%, transparent 70%);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.025) 0%, rgba(0, 0, 0, 0.005) 50%, transparent 70%);
       filter: blur(70px);
       border-radius: 50%;
       pointer-events: none;
@@ -83,44 +82,42 @@
       100% { transform: translate(10%, 10%) scale(1.05); }
     }
 
-    /* Glass Panels */
-    .apple-glass {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(30px);
-      -webkit-backdrop-filter: blur(30px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    /* Ultra-Clean Apple Liquid Frosted Glass Panels */
+    .apple-liquid-glass {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(40px) saturate(190%);
+      -webkit-backdrop-filter: blur(40px) saturate(190%);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 1);
     }
 
-    .apple-glass-card {
-      background: rgba(255, 255, 255, 0.035);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.09);
+    .apple-liquid-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .apple-glass-card:hover {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.25);
+    .apple-liquid-card:hover {
+      background: rgba(255, 255, 255, 0.95);
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
       transform: translateY(-2px);
     }
 
-    /* Typography Gradients */
-    .text-apple-headline {
-      background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A6 100%);
+    /* Text Gradients */
+    .text-apple-headline-light {
+      background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .text-apple-sub {
-      color: #86868b;
-    }
-
-    /* Scroll Reveal Animation Styles */
+    /* Slide Elements Reveal Animation */
     .reveal-elem {
       opacity: 0;
-      transform: translateY(28px) scale(0.98);
+      transform: translateY(24px) scale(0.98);
       transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -129,150 +126,166 @@
       transform: translateY(0) scale(1);
     }
 
-    /* Liquid Pulse Waves for Wi-Fi */
-    @keyframes liquidWave {
-      0% { transform: scale(0.85); opacity: 0.8; }
-      50% { transform: scale(1.15); opacity: 0.3; }
-      100% { transform: scale(1.45); opacity: 0; }
+    /* Interactive Switch Ports (Scroll-Scrub or Click) */
+    .switch-chassis-rj45 {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .wave-ring {
-      animation: liquidWave 3s infinite cubic-bezier(0.16, 1, 0.3, 1);
+    .switch-chassis-rj45.active-port {
+      background: #000000;
+      color: #ffffff;
+      border-color: #000000;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transform: translateY(-6px) scale(1.04);
     }
-    .wave-ring-delay-1 { animation-delay: 1s; }
-    .wave-ring-delay-2 { animation-delay: 2s; }
 
-    /* Custom Minimal Scrollbar */
+    /* Wi-Fi Expanding Waves (Liquid Pulse Animation) */
+    .wifi-wave-ring {
+      position: absolute;
+      border: 2px solid rgba(0, 0, 0, 0.18);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .speaker-drawer {
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Minimal Scrollbar */
     ::-webkit-scrollbar {
-      width: 4px;
+      width: 5px;
     }
     ::-webkit-scrollbar-track {
-      background: #000;
+      background: #f5f5f7;
     }
     ::-webkit-scrollbar-thumb {
-      background: #27272a;
-      border-radius: 2px;
+      background: #d1d1d6;
+      border-radius: 3px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #3f3f46;
+      background: #a1a1a6;
     }
   </style>
 </head>
-<body class="selection:bg-white selection:text-black">
+<body class="selection:bg-black selection:text-white">
 
   <!-- ======================================================== -->
-  <!-- APPLE MINIMAL TOP NAVIGATION (PERSISTENT GLASS)          -->
+  <!-- APPLE FROSTED GLASS HUD & NAVIGATION (WHITE EDITION)     -->
   <!-- ======================================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-2xl border-b border-white/10 px-6 sm:px-12 py-3.5 flex items-center justify-between transition-all">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/75 backdrop-blur-2xl border-b border-black/5 px-6 sm:px-12 py-3.5 flex items-center justify-between transition-all shadow-sm">
     <div class="flex items-center gap-4">
-      <!-- Monochrome Minimal Apple-Like Icon -->
-      <div class="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white shadow-inner">
+      <!-- Apple Liquid Minimal Logo -->
+      <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center shadow-md">
         <i data-lucide="command" class="w-4 h-4"></i>
       </div>
       <div>
         <div class="flex items-center gap-2">
-          <span class="text-[11px] font-mono tracking-widest uppercase text-appleTextMuted">Enterprise Networking</span>
-          <span class="text-[9px] bg-white/10 text-white font-mono px-2 py-0.5 rounded-full border border-white/15">Keynote</span>
+          <span class="text-[11px] font-mono tracking-widest uppercase text-appleTextMuted">Enterprise Systems</span>
+          <span class="text-[9px] bg-black/5 text-black font-mono px-2 py-0.5 rounded-full border border-black/10">Keynote Deck</span>
         </div>
-        <h1 class="text-sm font-semibold text-white tracking-tight">Switching & Wi-Fi Architecture</h1>
+        <h1 class="text-sm font-semibold text-appleTextDark tracking-tight">Switching & Enterprise Wi-Fi</h1>
       </div>
     </div>
 
-    <!-- Slide Index & Liquid Controls -->
+    <!-- Navigation & Slide Counter -->
     <div class="flex items-center gap-3">
-      <div class="hidden md:flex items-center gap-2 text-xs font-mono text-appleTextMuted bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-        <span>Slide</span>
-        <span id="currentSlideNumber" class="text-white font-bold">01</span>
+      <div class="hidden md:flex items-center gap-2 text-xs font-mono text-appleTextMuted bg-black/5 px-3.5 py-1.5 rounded-full border border-black/5">
+        <span>Folie</span>
+        <span id="currentSlideNumber" class="text-appleTextDark font-bold">01</span>
         <span>/</span>
-        <span class="text-white/40">10</span>
+        <span class="text-appleTextMuted">10</span>
       </div>
 
-      <!-- Arrow Navigation -->
-      <div class="flex items-center gap-1 bg-white/5 p-1 rounded-full border border-white/10">
-        <button onclick="navigateSlide(-1)" class="w-7 h-7 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition" title="Vorherige Folie (↑)">
+      <!-- Arrow Buttons -->
+      <div class="flex items-center gap-1 bg-black/5 p-1 rounded-full border border-black/5">
+        <button onclick="navigateSlide(-1)" class="w-7 h-7 rounded-full flex items-center justify-center text-appleTextDark hover:bg-white transition shadow-sm" title="Vorherige Folie (↑)">
           <i data-lucide="chevron-up" class="w-4 h-4"></i>
         </button>
-        <button onclick="navigateSlide(1)" class="w-7 h-7 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition" title="Nächste Folie (↓ / Leertaste)">
+        <button onclick="navigateSlide(1)" class="w-7 h-7 rounded-full flex items-center justify-center text-appleTextDark hover:bg-white transition shadow-sm" title="Nächste Folie (↓ / Leertaste)">
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </button>
       </div>
 
-      <!-- Presenter Notes Toggle Button -->
-      <button onclick="toggleAllSpeakerNotes()" class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-white/10 text-white border border-white/20 hover:bg-white/20 transition">
-        <i data-lucide="mic" class="w-3.5 h-3.5 text-white/80"></i>
+      <!-- Presenter Notes Toggle -->
+      <button onclick="toggleAllSpeakerNotes()" class="hidden sm:flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-black/5 text-appleTextDark border border-black/10 hover:bg-black/10 transition">
+        <i data-lucide="mic" class="w-3.5 h-3.5 text-black"></i>
         <span id="globalNotesToggleText">Sprechernotizen</span>
       </button>
     </div>
   </header>
 
   <!-- Right Floating Minimal Slide Indicator -->
-  <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3 bg-black/40 backdrop-blur-xl p-2 rounded-full border border-white/10">
-    <a href="#slide-1" class="slide-dot w-2 h-2 rounded-full bg-white transition-all scale-125" title="01. Intro"></a>
-    <a href="#slide-2" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="02. L1-L3 Domains"></a>
-    <a href="#slide-3" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="03. MAC Engine"></a>
-    <a href="#slide-4" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="04. 802.1Q VLANs"></a>
-    <a href="#slide-5" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="05. Spanning Tree"></a>
-    <a href="#slide-6" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="06. Wi-Fi Spectrum"></a>
-    <a href="#slide-7" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="07. Wi-Fi 4 to 7"></a>
-    <a href="#slide-8" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="08. WLC Architecture"></a>
-    <a href="#slide-9" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="09. 802.1X Security"></a>
-    <a href="#slide-10" class="slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all" title="10. Verification Exam"></a>
+  <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3 bg-white/70 backdrop-blur-xl p-2.5 rounded-full border border-black/5 shadow-lg">
+    <a href="#slide-1" class="slide-dot w-2 h-2 rounded-full bg-black transition-all scale-150" title="01. Intro Keynote"></a>
+    <a href="#slide-2" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="02. Domänen (Hub vs Switch)"></a>
+    <a href="#slide-3" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="03. Switch Ports & MAC Engine"></a>
+    <a href="#slide-4" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="04. 802.1Q VLAN Trunking"></a>
+    <a href="#slide-5" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="05. Spanning Tree Loop Protection"></a>
+    <a href="#slide-6" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="06. Wi-Fi Frequenzbänder"></a>
+    <a href="#slide-7" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="07. Wi-Fi Wellen (Wi-Fi 4 bis 7)"></a>
+    <a href="#slide-8" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="08. WLC & PoE Architektur"></a>
+    <a href="#slide-9" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="09. Enterprise 802.1X Security"></a>
+    <a href="#slide-10" class="slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all" title="10. Wissens-Check Quiz"></a>
   </aside>
 
   <!-- ======================================================== -->
-  <!-- SLIDE DECK (APPLE SCROLL-SNAP MONOCHROME)                -->
+  <!-- SLIDE DECK (PURE WHITE / LIQUID GLASS EDITION)           -->
   <!-- ======================================================== -->
   <main class="w-full">
 
     <!-- ---------------------------------------------------- -->
-    <!-- SLIDE 01: HERO KEYNOTE (APPLE STYLE)                 -->
+    <!-- SLIDE 01: HERO KEYNOTE (CLEAN WHITE)                 -->
     <!-- ---------------------------------------------------- -->
     <section id="slide-1" class="slide-section flex flex-col justify-center items-center px-6 sm:px-12 py-24 relative overflow-hidden is-visible">
-      <div class="liquid-orb-1 top-10 left-1/4"></div>
-      <div class="liquid-orb-2 bottom-10 right-1/4"></div>
+      <div class="liquid-orb-light-1 top-10 left-1/4"></div>
+      <div class="liquid-orb-light-2 bottom-10 right-1/4"></div>
 
       <div class="max-w-5xl w-full mx-auto text-center space-y-8 relative z-10">
         
-        <div class="reveal-elem inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase bg-white/5 border border-white/15 text-white/90">
-          <i data-lucide="sparkle" class="w-3.5 h-3.5 text-white"></i>
-          Keynote Deck • Advanced Network Engineering
+        <div class="reveal-elem inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-mono tracking-widest uppercase bg-white border border-black/10 text-appleTextDark shadow-sm">
+          <i data-lucide="sparkle" class="w-3.5 h-3.5 text-black"></i>
+          Keynote Presentation • IT-Infrastruktur & Netzwerke
         </div>
 
-        <h1 class="reveal-elem text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-apple-headline leading-[1.05]">
+        <h1 class="reveal-elem text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-apple-headline-light leading-[1.05]">
           Network Systems.<br>
-          <span class="text-white/40 font-light">Switching & Enterprise Wi-Fi.</span>
+          <span class="text-appleTextMuted font-light">Switching & Enterprise Wi-Fi.</span>
         </h1>
 
         <p class="reveal-elem text-base sm:text-xl text-appleTextMuted max-w-2xl mx-auto leading-relaxed font-light">
-          Eine kompromisslose visuelle Reise durch Layer 2/3 Switching, 802.1Q-Trunking, Schleifenschutz und hochskalierbare Campus-Funknetze.
+          Wie Terabits an Daten kollisionsfrei im Switch-Chassis geschleust werden, Broadcast-Stürme verhindert werden und drahtlose Wellen ganze Campus-Netze versorgen.
         </p>
 
-        <!-- 4 Minimal Frosted Cards -->
+        <!-- 4 Minimal Frosted Cards (Clean Light) -->
         <div class="reveal-elem grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 text-left">
-          <div class="apple-glass-card p-5 rounded-2xl">
-            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">01 / Foundation</span>
-            <h4 class="text-sm font-semibold text-white">L2 & MAC Engine</h4>
-            <p class="text-xs text-appleTextMuted mt-1">Kollisionsfreie Hardware-Weiterleitung.</p>
+          <div class="apple-liquid-card p-5 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted uppercase block mb-1">01 / Foundation</span>
+            <h4 class="text-sm font-semibold text-appleTextDark">L2 Switch & Ports</h4>
+            <p class="text-xs text-appleTextMuted mt-1">Interaktives Port-Abscrollen & MAC-Table.</p>
           </div>
-          <div class="apple-glass-card p-5 rounded-2xl">
-            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">02 / Isolation</span>
-            <h4 class="text-sm font-semibold text-white">802.1Q VLANs</h4>
-            <p class="text-xs text-appleTextMuted mt-1">Logische Segmentierung & Frame Tags.</p>
+          <div class="apple-liquid-card p-5 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted uppercase block mb-1">02 / Isolation</span>
+            <h4 class="text-sm font-semibold text-appleTextDark">802.1Q VLANs</h4>
+            <p class="text-xs text-appleTextMuted mt-1">Frame-Tags & logische Trennung.</p>
           </div>
-          <div class="apple-glass-card p-5 rounded-2xl">
-            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">03 / Resilience</span>
-            <h4 class="text-sm font-semibold text-white">Spanning Tree</h4>
-            <p class="text-xs text-appleTextMuted mt-1">Eliminierung von Broadcast-Loops.</p>
+          <div class="apple-liquid-card p-5 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted uppercase block mb-1">03 / Resilience</span>
+            <h4 class="text-sm font-semibold text-appleTextDark">Spanning Tree</h4>
+            <p class="text-xs text-appleTextMuted mt-1">Ausfallsicherheit ohne Schleifen.</p>
           </div>
-          <div class="apple-glass-card p-5 rounded-2xl">
-            <span class="text-[10px] font-mono text-white/50 uppercase block mb-1">04 / Wireless</span>
-            <h4 class="text-sm font-semibold text-white">WLC & 802.1X</h4>
-            <p class="text-xs text-appleTextMuted mt-1">Split-MAC, Roaming & RADIUS Auth.</p>
+          <div class="apple-liquid-card p-5 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted uppercase block mb-1">04 / Wireless</span>
+            <h4 class="text-sm font-semibold text-appleTextDark">Wi-Fi Funkwellen</h4>
+            <p class="text-xs text-appleTextMuted mt-1">Wellen-Animation von Wi-Fi 4 bis 7.</p>
           </div>
         </div>
 
-        <!-- Scroll Prompt -->
+        <!-- Scroll Cue Button -->
         <div class="reveal-elem pt-8">
-          <a href="#slide-2" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs font-mono text-white transition-all backdrop-blur-md">
+          <a href="#slide-2" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white hover:bg-neutral-800 text-xs font-mono transition-all shadow-md active:scale-95">
             <span>Nach unten scrollen</span>
             <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
           </a>
@@ -281,14 +294,14 @@
 
       <!-- Speaker Notes Drawer -->
       <div class="max-w-4xl w-full mx-auto mt-6 relative z-10">
-        <button onclick="toggleSpeakerNote('sn-1')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition mx-auto">
+        <button onclick="toggleSpeakerNote('sn-1')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition mx-auto">
           <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
           <span>Sprechernotiz einblenden</span>
         </button>
-        <div id="sn-1" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-3 transition-all backdrop-blur-xl">
-          <div class="p-5 text-xs sm:text-sm text-appleWhite leading-relaxed">
-            <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 1):</strong>
-            "Guten Tag! Wenn wir im Unternehmen eine Datei öffnen oder ein Meeting starten, erwarten wir Millisekunden-Reaktionszeiten. Doch wie funktioniert dieses Fundament unter der Haube? Heute betrachten wir, wie moderne Layer-2/3 Switche Datenströme sortieren und wie Enterprise-WLAN trotz geteiltem Funkraum maximale Ausfallsicherheit und Zero-Trust-Sicherheit garantiert."
+        <div id="sn-1" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-3 transition-all shadow-sm">
+          <div class="p-5 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+            <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 1):</strong>
+            "Willkommen zu unserer Präsentation! Heute betrachten wir das Fundament jeder modernen IT-Landschaft. Wir klären visuell, warum ein Switch mit Mikrosegmentierung und Spanning Tree die Lebensader im Rechenzentrum ist – und wie wir im WLAN trotz geteiltem Funkraum mit Wi-Fi 6 und 7 Höchstgeschwindigkeiten erreichen."
           </div>
         </div>
       </div>
@@ -297,97 +310,100 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 02: HUB vs. SWITCH vs. ROUTER                  -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-2" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-2 top-1/4 right-10"></div>
+    <section id="slide-2" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-2 top-1/4 right-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="reveal-elem flex items-center justify-between border-b border-black/5 pb-4">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 02 • OSI-Schichten & Domänen</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Hub vs. Switch vs. Router</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 02 • Kollisions- & Broadcast-Domänen</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Hub vs. Switch vs. Router</h2>
           </div>
-          <span class="text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">Collision vs. Broadcast Domains</span>
+          <span class="text-xs font-mono text-appleTextMuted bg-white px-3.5 py-1 rounded-full border border-black/5 shadow-sm">OSI Layer 1-3</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           <!-- Hub -->
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl flex flex-col justify-between">
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/10 text-white/70 border border-white/15">Layer 1 Physical</span>
-                <i data-lucide="radio" class="w-5 h-5 text-white/40"></i>
+                <span class="px-3 py-1 rounded-full text-[10px] font-mono bg-black/5 text-appleTextMuted border border-black/5">Layer 1 Physical</span>
+                <i data-lucide="radio" class="w-5 h-5 text-appleTextMuted"></i>
               </div>
-              <h3 class="text-xl font-bold text-white">Hub (Repeater)</h3>
+              <h3 class="text-xl font-bold text-appleTextDark">Hub (Repeater)</h3>
               <p class="text-xs text-appleTextMuted mt-2 leading-relaxed font-light">
-                Reiner elektrischer Signalvervielfältiger. Kennt weder MAC noch IP. Jedes Bit an Port 1 wird ungeprüft an alle anderen Ports geblasen.
+                Dummer Signalvervielfältiger. Jedes Bit an Port 1 wird ungeprüft an alle anderen Ports herausgeblasen.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-white/10">
-              <span class="text-xs text-white/70 font-mono block">1 gemeinsame Kollisionsdomäne</span>
-              <p class="text-[11px] text-white/40 mt-1">Zwei Sender gleichzeitig = elektrischer Crash.</p>
+            <div class="mt-6 pt-4 border-t border-black/5">
+              <span class="text-xs text-appleTextDark font-mono font-semibold block">1 gemeinsame Kollisionsdomäne</span>
+              <p class="text-[11px] text-appleTextMuted mt-1">Gleichzeitiges Senden = Datenkollision.</p>
             </div>
           </div>
 
-          <!-- Switch (Featured Apple Glass) -->
-          <div class="reveal-elem apple-glass p-6 rounded-3xl flex flex-col justify-between relative border border-white/30">
+          <!-- Switch (Featured White Glass) -->
+          <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl flex flex-col justify-between relative border-2 border-black/15 shadow-xl">
+            <div class="absolute -top-3 right-6 bg-black text-white text-[9px] font-mono font-bold uppercase px-3 py-0.5 rounded-full shadow">
+              Standard im LAN
+            </div>
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white text-black font-semibold">Layer 2 Data Link</span>
-                <i data-lucide="git-commit" class="w-5 h-5 text-white"></i>
+                <span class="px-3 py-1 rounded-full text-[10px] font-mono bg-black text-white font-semibold">Layer 2 Data Link</span>
+                <i data-lucide="git-commit" class="w-5 h-5 text-black"></i>
               </div>
-              <h3 class="text-xl font-bold text-white">Switch (Bridge)</h3>
-              <p class="text-xs text-white/80 mt-2 leading-relaxed font-light">
-                Liest physische <strong>MAC-Adressen</strong> via ASIC. Bietet Mikrosegmentierung: Jeder Port ist eine eigene Kollisionsdomäne im Vollduplex.
+              <h3 class="text-xl font-bold text-appleTextDark">Switch (Bridge)</h3>
+              <p class="text-xs text-appleTextDark/80 mt-2 leading-relaxed font-light">
+                Verarbeitet Hardware-<strong>MAC-Adressen</strong> via ASIC. Bietet Mikrosegmentierung: Jeder Port ist eine eigene, unabhängige Kollisionsdomäne im Vollduplex.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-white/20">
-              <span class="text-xs text-white font-mono block">Zero Collisions</span>
-              <p class="text-[11px] text-white/60 mt-1">Standard für alle modernen kabelgebundenen LANs.</p>
+            <div class="mt-6 pt-4 border-t border-black/10">
+              <span class="text-xs text-appleTextDark font-mono font-bold block">Zero Collisions</span>
+              <p class="text-[11px] text-appleTextMuted mt-1">Kollisionsfreies gleichzeitiges Senden & Empfangen.</p>
             </div>
           </div>
 
           <!-- Router -->
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl flex flex-col justify-between">
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <span class="px-2.5 py-1 rounded-full text-[10px] font-mono bg-white/10 text-white/70 border border-white/15">Layer 3 Network</span>
-                <i data-lucide="globe" class="w-5 h-5 text-white/40"></i>
+                <span class="px-3 py-1 rounded-full text-[10px] font-mono bg-black/5 text-appleTextMuted border border-black/5">Layer 3 Network</span>
+                <i data-lucide="globe" class="w-5 h-5 text-appleTextMuted"></i>
               </div>
-              <h3 class="text-xl font-bold text-white">Router / L3 Switch</h3>
+              <h3 class="text-xl font-bold text-appleTextDark">Router / L3 Switch</h3>
               <p class="text-xs text-appleTextMuted mt-2 leading-relaxed font-light">
-                Verbindet logisch getrennte IP-Subnetze und bestimmt den effizientesten Weg durch interne Netze oder das weltweite Internet.
+                Verbindet getrennte logische IP-Subnetze und bestimmt den besten Pfad im WAN/Internet anhand von IP-Routen.
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-white/10">
-              <span class="text-xs text-white/70 font-mono block">Trennt Broadcast-Domänen</span>
-              <p class="text-[11px] text-white/40 mt-1">Broadcasts verlassen das Subnetz nicht.</p>
+            <div class="mt-6 pt-4 border-t border-black/5">
+              <span class="text-xs text-appleTextDark font-mono font-semibold block">Trennt Broadcast-Domänen</span>
+              <p class="text-[11px] text-appleTextMuted mt-1">Broadcasts verlassen das Subnetz nicht.</p>
             </div>
           </div>
 
         </div>
 
-        <!-- Merksatz Glass Banner -->
-        <div class="reveal-elem apple-glass p-4 rounded-2xl flex items-center gap-4">
-          <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-            <i data-lucide="check" class="w-4 h-4 text-white"></i>
+        <!-- Merksatz Banner -->
+        <div class="reveal-elem apple-liquid-glass p-4 rounded-2xl flex items-center gap-4">
+          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center shrink-0">
+            <i data-lucide="check" class="w-4 h-4"></i>
           </div>
-          <p class="text-xs sm:text-sm text-white/80 font-light">
-            <strong class="text-white font-semibold">Senior Merksatz:</strong> Ein Standard-Switch eliminiert Kollisionen, bildet aber immer noch <strong>eine einzige Broadcast-Domäne</strong>. Erst durch VLANs oder Router teilen wir diese Broadcast-Domäne gezielt auf.
+          <p class="text-xs sm:text-sm text-appleTextDark font-light">
+            <strong class="font-semibold text-black">Prüfungs-Merksatz:</strong> Ein Standard-Switch teilt Kollisionsdomänen auf, bildet aber standardmäßig immer noch <strong>eine einzige Broadcast-Domäne</strong>. Erst VLANs oder Router teilen Broadcasts auf!
           </p>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-2')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-2')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-2" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 2):</strong>
-              "Der Hub war wie ein Besprechungsraum, in dem alle durcheinander riefen. Der Switch führte private Sprechkanäle ein – jeder Port ist isoliert im Vollduplex. Dennoch: Wenn jemand einen Broadcast sendet ('Wer hat IP 192.168.1.1?'), hören das alle am Switch. Genau darum brauchen wir VLANs."
+          <div id="sn-2" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 2):</strong>
+              "Hier sehen wir den fundamentalen Unterschied: Früher schickte ein Hub jedes Datenbit blind an alle Geräte weiter. Der Switch hingegen baut für jeden Port eine separate Datenautobahn auf. Aber Achtung: Wenn ein Broadcast gesendet wird, erreicht er immer noch alle Ports. Genau das lösen wir gleich mit VLANs."
             </div>
           </div>
         </div>
@@ -396,135 +412,129 @@
     </section>
 
     <!-- ---------------------------------------------------- -->
-    <!-- SLIDE 03: LIVE MAC SIMULATOR (MONOCHROME APPLE)      -->
+    <!-- SLIDE 03: INTERAKTIVER SWITCH MIT AB-SCROLLBAREN PORTS-->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-3" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-1 bottom-10 left-10"></div>
+    <section id="slide-3" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-1 bottom-10 left-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
+        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/5 pb-4 gap-3">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 03 • Interaktiver Lernsimulator</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Die CAM / MAC-Adresstabelle</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 03 • Interaktives Switch-Chassis</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Switch-Ports im Detail & MAC Learning</h2>
           </div>
+          <!-- Next Port Trigger -->
           <div class="flex items-center gap-2">
-            <button id="appleBtnSimStep" onclick="appleNextSimStep()" class="px-5 py-2 rounded-full text-xs font-semibold bg-white text-black hover:bg-white/90 active:scale-95 transition flex items-center gap-2 shadow-lg">
-              <i data-lucide="play" class="w-3.5 h-3.5 fill-black"></i>
-              <span id="appleSimBtnText">1. Paket senden (PC A ➔ PC C)</span>
-            </button>
-            <button onclick="appleResetSim()" class="p-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white transition" title="Zurücksetzen">
-              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+            <button onclick="inspectNextPort()" class="px-5 py-2 rounded-full text-xs font-semibold bg-black text-white hover:bg-neutral-800 active:scale-95 transition flex items-center gap-2 shadow-md">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+              <span>Nächsten Port abscrollen / fokussieren</span>
             </button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <!-- Switch Chassis Visual & Ports Bar -->
+        <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl space-y-6">
           
-          <!-- Visual Switch Arena (7 Cols) -->
-          <div class="reveal-elem lg:col-span-7 apple-glass p-6 rounded-3xl flex flex-col justify-between min-h-[340px]">
-            
-            <div id="appleSimBanner" class="bg-white/5 border border-white/10 rounded-2xl p-3.5 text-xs font-mono text-white/80 flex items-center gap-2.5">
-              <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-              <span id="appleSimBannerText">Bereit. Klicke auf '1. Paket senden', um den Lernprozess zu starten.</span>
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2 text-xs font-mono font-bold text-appleTextDark uppercase">
+              <i data-lucide="server" class="w-4 h-4"></i>
+              <span>24-Port Gigabit Enterprise Switch Chassis (Frontansicht)</span>
             </div>
-
-            <!-- Central Switch Physical Box -->
-            <div class="flex justify-center my-6">
-              <div class="w-64 h-28 rounded-2xl bg-black/80 border border-white/30 p-3.5 flex flex-col items-center justify-between shadow-2xl relative">
-                <div class="flex items-center gap-2 text-white font-mono text-xs uppercase tracking-wider">
-                  <i data-lucide="cpu" class="w-4 h-4"></i>
-                  <span>Switch Core Engine</span>
-                </div>
-                <span class="text-[9px] font-mono text-white/40">Hardware ASIC • Port Learning</span>
-                <div class="grid grid-cols-4 gap-1.5 w-full pt-1">
-                  <div id="apPort1" class="text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50">P1</div>
-                  <div id="apPort2" class="text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50">P2</div>
-                  <div id="apPort3" class="text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50">P3</div>
-                  <div id="apPort4" class="text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50">P4</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 4 PCs Nodes -->
-            <div class="grid grid-cols-4 gap-2">
-              <div id="apNodePcA" class="bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all">
-                <div class="w-7 h-7 mx-auto rounded-full bg-white/10 flex items-center justify-center text-white mb-1">
-                  <i data-lucide="laptop" class="w-3.5 h-3.5"></i>
-                </div>
-                <div class="text-[11px] font-bold text-white">PC A</div>
-                <div class="text-[8px] font-mono text-white/50">AA:AA:01</div>
-              </div>
-              <div id="apNodePcB" class="bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all">
-                <div class="w-7 h-7 mx-auto rounded-full bg-white/10 flex items-center justify-center text-white/50 mb-1">
-                  <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
-                </div>
-                <div class="text-[11px] font-bold text-white">PC B</div>
-                <div class="text-[8px] font-mono text-white/50">BB:BB:02</div>
-              </div>
-              <div id="apNodePcC" class="bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all">
-                <div class="w-7 h-7 mx-auto rounded-full bg-white/10 flex items-center justify-center text-white mb-1">
-                  <i data-lucide="server" class="w-3.5 h-3.5"></i>
-                </div>
-                <div class="text-[11px] font-bold text-white">PC C</div>
-                <div class="text-[8px] font-mono text-white/50">CC:CC:03</div>
-              </div>
-              <div id="apNodePcD" class="bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all">
-                <div class="w-7 h-7 mx-auto rounded-full bg-white/10 flex items-center justify-center text-white/50 mb-1">
-                  <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
-                </div>
-                <div class="text-[11px] font-bold text-white">PC D</div>
-                <div class="text-[8px] font-mono text-white/50">DD:DD:04</div>
-              </div>
-            </div>
-
-            <!-- Steps Progress Badges -->
-            <div class="flex gap-2 pt-4 text-[10px] font-mono">
-              <span id="apBadge1" class="px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/10">1. Source MAC lernen</span>
-              <span id="apBadge2" class="px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/10">2. Flooding</span>
-              <span id="apBadge3" class="px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/10">3. Direct Unicast</span>
-            </div>
+            <span class="text-[10px] font-mono text-appleTextMuted">Klicke auf einen Port oder nutze den Button</span>
           </div>
 
-          <!-- MAC Table View (5 Cols) -->
-          <div class="reveal-elem lg:col-span-5 apple-glass p-6 rounded-3xl flex flex-col justify-between font-mono">
-            <div>
-              <div class="flex items-center justify-between pb-3 border-b border-white/10">
-                <span class="text-xs font-bold text-white uppercase tracking-wider">CAM Table</span>
-                <span class="text-[9px] bg-white/10 text-white/70 px-2 py-0.5 rounded-full">Aging: 300s</span>
+          <!-- 4 Focused Ports with RJ45 Aesthetic -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            
+            <!-- Port 1 -->
+            <button onclick="selectPort(1)" id="rjPort1" class="switch-chassis-rj45 active-port apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono font-bold">Port Gi0/1</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
               </div>
+              <div class="text-[10px] font-mono opacity-70">PC A (Geschäftsleitung)</div>
+              <div class="text-[11px] font-bold mt-1">MAC: AA:AA:01</div>
+            </button>
 
-              <div class="grid grid-cols-3 text-[10px] font-bold text-white/40 py-2.5 border-b border-white/10">
+            <!-- Port 2 -->
+            <button onclick="selectPort(2)" id="rjPort2" class="switch-chassis-rj45 apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono font-bold">Port Gi0/2</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-[10px] font-mono opacity-70">PC B (Buchhaltung)</div>
+              <div class="text-[11px] font-bold mt-1">MAC: BB:BB:02</div>
+            </button>
+
+            <!-- Port 3 -->
+            <button onclick="selectPort(3)" id="rjPort3" class="switch-chassis-rj45 apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono font-bold">Port Gi0/3</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-[10px] font-mono opacity-70">PC C (Server / CRM)</div>
+              <div class="text-[11px] font-bold mt-1">MAC: CC:CC:03</div>
+            </button>
+
+            <!-- Port 4 -->
+            <button onclick="selectPort(4)" id="rjPort4" class="switch-chassis-rj45 apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-mono font-bold">Port Gi0/4</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+              <div class="text-[10px] font-mono opacity-70">PC D (Gäste / IoT)</div>
+              <div class="text-[11px] font-bold mt-1">MAC: DD:DD:04</div>
+            </button>
+
+          </div>
+
+          <!-- Dynamic Port Inspector Card (Shows what the port is doing) -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center pt-2">
+            
+            <div class="md:col-span-7 space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-black text-white">
+                <span id="inspectorPortBadge">Fokus: Port Gi0/1</span>
+              </div>
+              <h3 id="inspectorPortTitle" class="text-xl font-bold text-appleTextDark">
+                Port 1: Source-MAC Registrierung & CAM-Speicher
+              </h3>
+              <p id="inspectorPortDesc" class="text-xs sm:text-sm text-appleTextMuted leading-relaxed font-light">
+                Sobald PC A ein Paket sendet, analysiert der ASIC-Chip die Quell-Adresse <code>AA:AA:01</code>. Er ordnet diesen Port im CAM-Speicher zu. Unbekannte Ziel-Adressen werden an alle anderen Ports (Flooding) weitergeleitet.
+              </p>
+            </div>
+
+            <!-- Mini Live CAM Table for this Port -->
+            <div class="md:col-span-5 bg-white p-4 rounded-2xl border border-black/10 shadow-sm font-mono text-xs">
+              <div class="flex items-center justify-between border-b border-black/5 pb-2 text-[10px] font-bold text-appleTextMuted uppercase">
                 <span>Port</span>
-                <span>MAC-Adresse</span>
-                <span>Status</span>
+                <span>Gelernte MAC</span>
+                <span>Aging Timer</span>
               </div>
-
-              <div id="appleMacTableBody" class="py-2 text-xs divide-y divide-white/5 min-h-[140px]">
-                <div id="appleMacEmpty" class="text-white/30 italic py-8 text-center text-xs">
-                  (Kein Frame empfangen - Tabelle leer)
-                </div>
+              <div id="inspectorCamRow" class="py-2.5 flex items-center justify-between text-appleTextDark font-bold">
+                <span>Gi0/1</span>
+                <span>AA:AA:AA:01</span>
+                <span class="text-emerald-600">300s (Aktiv)</span>
+              </div>
+              <div class="text-[10px] text-appleTextMuted pt-2 border-t border-black/5">
+                Vollduplex 1000BASE-T • Status: Connected
               </div>
             </div>
 
-            <div class="p-3 bg-white/5 rounded-2xl border border-white/10 text-[11px] text-white/70">
-              <strong class="text-white font-semibold block mb-0.5">Senior-Wissen:</strong>
-              "Der Switch lernt niemals anhand der Ziel-MAC. Er registriert ausschließlich die Absender-MAC eingehender Frames."
-            </div>
           </div>
 
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-3')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-3')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-3" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 3):</strong>
-              "Hier sehen wir live den Algorithmus: Sobald PC A sendet, schreibt der Switch 'Port 1 = AA:AA:01' in den Speicher. Da er PC C noch nicht kennt, flutet er das Paket an alle anderen Ports. Erst wenn PC C antwortet, wird dessen Port gespeichert – ab diesem Moment fließt nur noch zielgerichteter Unicast-Verkehr."
+          <div id="sn-3" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 3):</strong>
+              "Wenn Sie diese Folie präsentieren, klicken Sie einfach auf die einzelnen Ports des Switches: Jeder Port hat seinen eigenen Mikroprozessor-Puffer. Der Switch beobachtet, an welchem Port welcher Rechner Daten abschickt, und baut in Millisekunden eine interne Landkarte (die CAM-Tabelle) auf."
             </div>
           </div>
         </div>
@@ -535,128 +545,128 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 04: VLANs & 802.1Q TRUNKING                    -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-4" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-2 top-10 right-10"></div>
+    <section id="slide-4" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-2 top-10 right-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
+        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/5 pb-4 gap-3">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 04 • Logische Segmentierung</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">VLANs & IEEE 802.1Q Trunking</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 04 • Logische Netztrennung</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">VLANs & IEEE 802.1Q Trunking</h2>
           </div>
-          <!-- Apple Segmented Control -->
-          <div class="flex items-center bg-white/10 p-1 rounded-full border border-white/15">
-            <button id="apBtnAccess" onclick="appleSetVlanMode('access')" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow transition">
+          <!-- Clean Segmented Control -->
+          <div class="flex items-center bg-black/5 p-1 rounded-full border border-black/5">
+            <button id="cleanBtnAccess" onclick="cleanSetVlanMode('access')" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow-sm transition">
               Access-Port
             </button>
-            <button id="apBtnTrunk" onclick="appleSetVlanMode('trunk')" class="px-4 py-1.5 rounded-full text-xs font-semibold text-white/70 hover:text-white transition">
+            <button id="cleanBtnTrunk" onclick="cleanSetVlanMode('trunk')" class="px-4 py-1.5 rounded-full text-xs font-semibold text-appleTextMuted hover:text-black transition">
               802.1Q Trunk
             </button>
           </div>
         </div>
 
-        <!-- 2 Switches Visual with Uplink -->
-        <div class="reveal-elem apple-glass p-6 rounded-3xl grid grid-cols-1 md:grid-cols-11 gap-4 items-center">
+        <!-- 2 Switches with Uplink Cable -->
+        <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl grid grid-cols-1 md:grid-cols-11 gap-4 items-center">
           
-          <!-- Switch A -->
-          <div class="md:col-span-4 bg-black/60 border border-white/15 p-4 rounded-2xl text-center">
-            <span class="text-[10px] font-mono text-white/50 block mb-2 uppercase">Switch A (Gebäude 1)</span>
+          <!-- Switch 1 -->
+          <div class="md:col-span-4 bg-white border border-black/10 p-4 rounded-2xl text-center shadow-sm">
+            <span class="text-[10px] font-mono text-appleTextMuted block mb-2 uppercase font-bold">Switch 1 (Building A)</span>
             <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <span class="text-white font-bold block">VLAN 10</span>
-                <span class="text-[9px] text-white/40">Management</span>
+              <div class="bg-black/5 border border-black/5 p-2.5 rounded-xl">
+                <span class="text-black font-bold block">VLAN 10</span>
+                <span class="text-[9px] text-appleTextMuted">Management</span>
               </div>
-              <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <span class="text-white font-bold block">VLAN 20</span>
-                <span class="text-[9px] text-white/40">Entwicklung</span>
+              <div class="bg-black/5 border border-black/5 p-2.5 rounded-xl">
+                <span class="text-black font-bold block">VLAN 20</span>
+                <span class="text-[9px] text-appleTextMuted">Sales / Vertrieb</span>
               </div>
             </div>
           </div>
 
-          <!-- Middle Cable -->
+          <!-- Uplink Cable in Center -->
           <div class="md:col-span-3 text-center py-2 flex flex-col items-center">
-            <span class="text-[10px] font-mono text-white/40 mb-1">Inter-Switch Link</span>
-            <div id="apUplinkBar" class="w-full h-2 rounded-full bg-white/20 relative overflow-hidden transition-all duration-300">
-              <div class="w-full h-full bg-white opacity-40"></div>
+            <span class="text-[10px] font-mono text-appleTextMuted mb-1 font-semibold">Uplink-Glasfaser</span>
+            <div id="cleanUplinkBar" class="w-full h-2 rounded-full bg-black/15 relative overflow-hidden transition-all duration-300">
+              <div class="w-full h-full bg-black opacity-30"></div>
             </div>
-            <span id="apUplinkBadge" class="mt-2 text-[10px] font-mono bg-white/10 text-white px-3 py-0.5 rounded-full border border-white/15">
-              Access: 1 VLAN
+            <span id="cleanUplinkBadge" class="mt-2 text-[10px] font-mono bg-white text-appleTextDark px-3 py-0.5 rounded-full border border-black/10 shadow-sm font-semibold">
+              Access: Nur 1 VLAN
             </span>
           </div>
 
-          <!-- Switch B -->
-          <div class="md:col-span-4 bg-black/60 border border-white/15 p-4 rounded-2xl text-center">
-            <span class="text-[10px] font-mono text-white/50 block mb-2 uppercase">Switch B (Gebäude 2)</span>
+          <!-- Switch 2 -->
+          <div class="md:col-span-4 bg-white border border-black/10 p-4 rounded-2xl text-center shadow-sm">
+            <span class="text-[10px] font-mono text-appleTextMuted block mb-2 uppercase font-bold">Switch 2 (Building B)</span>
             <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <span class="text-white font-bold block">VLAN 10</span>
-                <span class="text-[9px] text-white/40">Management</span>
+              <div class="bg-black/5 border border-black/5 p-2.5 rounded-xl">
+                <span class="text-black font-bold block">VLAN 10</span>
+                <span class="text-[9px] text-appleTextMuted">Management</span>
               </div>
-              <div class="bg-white/5 border border-white/10 p-2.5 rounded-xl">
-                <span class="text-white font-bold block">VLAN 20</span>
-                <span class="text-[9px] text-white/40">Entwicklung</span>
+              <div class="bg-black/5 border border-black/5 p-2.5 rounded-xl">
+                <span class="text-black font-bold block">VLAN 20</span>
+                <span class="text-[9px] text-appleTextMuted">Sales / Vertrieb</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        <!-- Frame Anatomy Visual -->
-        <div class="reveal-elem apple-glass p-6 rounded-3xl">
+        <!-- Frame Tag Anatomy -->
+        <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl">
           <div class="flex items-center justify-between mb-3">
-            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white flex items-center gap-2">
-              <i data-lucide="binary" class="w-4 h-4 text-white"></i>
+            <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-black flex items-center gap-2">
+              <i data-lucide="binary" class="w-4 h-4 text-black"></i>
               Ethernet Frame auf dem Uplink-Kabel
             </h4>
-            <span id="apFrameTagLabel" class="text-[11px] font-mono text-white/50">Untagged Standard Frame</span>
+            <span id="cleanFrameTagLabel" class="text-[11px] font-mono text-appleTextMuted">Untagged Standard-Frame</span>
           </div>
 
           <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs overflow-x-auto pb-2">
-            <div class="bg-white/5 border border-white/10 px-3 py-2 rounded-xl text-center">
-              <span class="text-[9px] text-white/40 block">6B</span>
-              <strong class="text-white">Dest MAC</strong>
+            <div class="bg-white border border-black/10 px-3 py-2 rounded-xl text-center shadow-sm">
+              <span class="text-[9px] text-appleTextMuted block">6B</span>
+              <strong class="text-black">Dest MAC</strong>
             </div>
-            <div class="bg-white/5 border border-white/10 px-3 py-2 rounded-xl text-center">
-              <span class="text-[9px] text-white/40 block">6B</span>
-              <strong class="text-white">Src MAC</strong>
+            <div class="bg-white border border-black/10 px-3 py-2 rounded-xl text-center shadow-sm">
+              <span class="text-[9px] text-appleTextMuted block">6B</span>
+              <strong class="text-black">Src MAC</strong>
             </div>
 
-            <!-- Injected 802.1Q Tag Block -->
-            <div id="apTagBlock" class="hidden border border-white bg-white text-black px-4 py-2 rounded-xl text-center animate-bounce">
+            <!-- Injected Tag Block (White / Black Contrast) -->
+            <div id="cleanTagBlock" class="hidden border-2 border-black bg-black text-white px-4 py-2 rounded-xl text-center animate-bounce shadow-md">
               <div class="text-[9px] font-bold">802.1Q Tag (4 Bytes)</div>
               <div class="text-[11px] font-extrabold">TPID 0x8100 | VID: 20</div>
             </div>
 
-            <div class="bg-white/5 border border-white/10 px-3 py-2 rounded-xl text-center">
-              <span class="text-[9px] text-white/40 block">2B</span>
-              <strong class="text-white/70">EtherType</strong>
+            <div class="bg-white border border-black/10 px-3 py-2 rounded-xl text-center shadow-sm">
+              <span class="text-[9px] text-appleTextMuted block">2B</span>
+              <strong class="text-appleTextMuted">EtherType</strong>
             </div>
-            <div class="flex-grow bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-center">
-              <span class="text-[9px] text-white/40 block">Payload</span>
-              <strong class="text-white">IP Packet Data</strong>
+            <div class="flex-grow bg-white border border-black/10 px-4 py-2 rounded-xl text-center shadow-sm">
+              <span class="text-[9px] text-appleTextMuted block">Payload</span>
+              <strong class="text-black">Nutzdaten (IP Paket)</strong>
             </div>
-            <div class="bg-white/5 border border-white/10 px-3 py-2 rounded-xl text-center">
-              <span class="text-[9px] text-white/40 block">4B</span>
-              <strong class="text-white/70">FCS</strong>
+            <div class="bg-white border border-black/10 px-3 py-2 rounded-xl text-center shadow-sm">
+              <span class="text-[9px] text-appleTextMuted block">4B</span>
+              <strong class="text-appleTextMuted">FCS</strong>
             </div>
           </div>
 
-          <div id="apVlanExpl" class="mt-3 text-xs text-appleTextMuted bg-white/5 p-3 rounded-2xl border border-white/10 font-light">
-            <strong>Access-Port:</strong> Frames bleiben ungetaggt. Es kann nur ein einziges VLAN über das Kabel übertragen werden.
+          <div id="cleanVlanExpl" class="mt-3 text-xs text-appleTextMuted bg-white p-3 rounded-2xl border border-black/10 font-light shadow-sm">
+            <strong>Access-Port:</strong> Endgeräte (Laptops, Drucker) verstehen keine Tags. Der Frame bleibt ungetaggt und gehört exklusiv zu diesem VLAN.
           </div>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-4')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-4')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-4" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 4):</strong>
-              "Statt für jede Abteilung teure Kabelstränge zu ziehen, bündeln wir den Traffic auf einem Trunk. 802.1Q injiziert direkt hinter die Quell-MAC ein 4 Byte langes Etikett mit der VLAN-ID. So transportieren wir hunderte Netze isoliert über dieselbe Glasfaser."
+          <div id="sn-4" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 4):</strong>
+              "Warum kaufen wir nicht für jede Abteilung eigene Switche? Weil 802.1Q-Trunking uns erlaubt, alle Netze über ein einziges Glasfaserkabel zu transportieren. Der Switch klebt einfach ein 4 Byte langes Etikett mit der VLAN-ID auf das Paket, damit der Zielswitch genau weiß, in welches Subnetz es gehört."
             </div>
           </div>
         </div>
@@ -667,75 +677,75 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 05: SPANNING TREE PROTOCOL (RSTP 802.1w)       -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-5" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-1 top-1/3 left-10"></div>
+    <section id="slide-5" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-1 top-1/3 left-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
+        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/5 pb-4 gap-3">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 05 • Resilienz & Schleifenschutz</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Spanning Tree Protocol (STP)</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 05 • Ausfallsicherheit ohne Loops</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Spanning Tree Protocol (STP)</h2>
           </div>
-          <button id="apBtnStp" onclick="appleToggleStp()" class="px-5 py-2 rounded-full text-xs font-semibold bg-white text-black hover:bg-white/90 active:scale-95 transition flex items-center gap-2 shadow-lg">
-            <i data-lucide="zap" class="w-3.5 h-3.5 fill-black"></i>
-            <span id="apBtnStpText">Hauptlink trennen (Failover testen)</span>
+          <button id="cleanBtnStp" onclick="cleanToggleStp()" class="px-5 py-2 rounded-full text-xs font-semibold bg-black text-white hover:bg-neutral-800 active:scale-95 transition flex items-center gap-2 shadow-md">
+            <i data-lucide="zap" class="w-3.5 h-3.5 fill-white"></i>
+            <span id="cleanBtnStpText">Hauptlink kappen (Failover testen)</span>
           </button>
         </div>
 
-        <div class="reveal-elem apple-glass p-8 rounded-3xl relative min-h-[360px] flex flex-col justify-between items-center">
+        <div class="reveal-elem apple-liquid-glass p-8 rounded-3xl relative min-h-[360px] flex flex-col justify-between items-center">
           
           <!-- Root Bridge -->
-          <div class="z-10 bg-black/80 border border-white/40 p-4 rounded-2xl text-center w-64 shadow-2xl">
-            <span class="text-[9px] font-mono uppercase tracking-widest text-white/50 block mb-1">Gewählte Root Bridge</span>
-            <div class="text-base font-bold text-white">Core Switch 01</div>
-            <div class="text-[10px] font-mono text-white/80">Prio: 4096 (Manuell vergeben)</div>
-            <div class="flex justify-around text-[10px] font-mono border-t border-white/10 mt-2 pt-1">
-              <span class="text-white font-bold">P1: DP</span>
-              <span class="text-white font-bold">P2: DP</span>
+          <div class="z-10 bg-white border-2 border-black p-4 rounded-2xl text-center w-64 shadow-xl">
+            <span class="text-[9px] font-mono uppercase tracking-widest text-appleTextMuted block mb-1 font-bold">Gewählte Root Bridge</span>
+            <div class="text-base font-bold text-appleTextDark">Core Switch 01</div>
+            <div class="text-[10px] font-mono text-appleTextDark">Prio: 4096 (Manuell vergeben)</div>
+            <div class="flex justify-around text-[10px] font-mono border-t border-black/10 mt-2 pt-1 font-semibold">
+              <span>Port 1: DP</span>
+              <span>Port 2: DP</span>
             </div>
           </div>
 
           <!-- Bottom 2 Switches -->
           <div class="w-full flex justify-between items-center max-w-xl mt-12 z-10">
-            <div class="bg-black/60 border border-white/15 p-4 rounded-2xl text-center w-52">
-              <span class="text-[9px] font-mono text-white/40 block">Non-Root Bridge</span>
-              <div class="text-sm font-bold text-white">Access Switch 02</div>
-              <span class="text-[10px] font-mono text-white/60 block mt-1">Port 1: Root Port (RP)</span>
+            <div class="bg-white border border-black/10 p-4 rounded-2xl text-center w-52 shadow-sm">
+              <span class="text-[9px] font-mono text-appleTextMuted block">Non-Root Bridge</span>
+              <div class="text-sm font-bold text-appleTextDark">Access Switch 02</div>
+              <span class="text-[10px] font-mono text-black font-semibold block mt-1">Port 1: Root Port (RP)</span>
             </div>
 
-            <!-- Link Status in center -->
+            <!-- Inter-Access Link -->
             <div class="text-center px-4">
-              <div id="apStpBadge" class="px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-white/10 text-white border border-white/20">
+              <div id="cleanStpBadge" class="px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-black/5 text-black border border-black/15 shadow-sm">
                 BLOCKING
               </div>
-              <span class="text-[9px] text-white/40 font-mono block mt-1">Schleife verhindert</span>
+              <span class="text-[9px] text-appleTextMuted font-mono block mt-1">Schleife blockiert</span>
             </div>
 
-            <div class="bg-black/60 border border-white/15 p-4 rounded-2xl text-center w-52">
-              <span class="text-[9px] font-mono text-white/40 block">Non-Root Bridge</span>
-              <div class="text-sm font-bold text-white">Access Switch 03</div>
-              <span id="apSw3PortStatus" class="text-[10px] font-mono text-white/70 block mt-1 font-bold">
+            <div class="bg-white border border-black/10 p-4 rounded-2xl text-center w-52 shadow-sm">
+              <span class="text-[9px] font-mono text-appleTextMuted block">Non-Root Bridge</span>
+              <div class="text-sm font-bold text-appleTextDark">Access Switch 03</div>
+              <span id="cleanSw3PortStatus" class="text-[10px] font-mono text-black font-bold block mt-1">
                 Port 2: Alternate (BLOCKING)
               </span>
             </div>
           </div>
 
-          <div id="apStpLog" class="mt-6 text-xs font-mono text-white/70 bg-white/5 p-3 rounded-2xl border border-white/10 w-full max-w-lg text-center">
-            Normale Topologie: Redundanter Link ist im Status <strong>BLOCKING</strong>. Keine Schleife, kein Broadcast-Sturm!
+          <div id="cleanStpLog" class="mt-6 text-xs font-mono text-appleTextDark bg-white p-3 rounded-2xl border border-black/10 w-full max-w-lg text-center shadow-sm">
+            Normale Topologie: Der redundante Link ist im Status <strong>BLOCKING</strong>. Keine Schleife, kein Broadcast-Sturm!
           </div>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-5')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-5')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-5" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 5):</strong>
-              "Im Rechenzentrum stecken wir absichtlich redundante Kabel. Ohne STP würde ein einziger Broadcast das Netz in Sekunden vernichten, weil Ethernet-Frames im Gegensatz zu IP kein TTL-Feld besitzen! STP wählt einen Chef – die Root Bridge – und schaltet parallele Leitungen stumm, bis eine Hauptleitung abreißt."
+          <div id="sn-5" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 5):</strong>
+              "In Firmennetzen verbinden wir Switche absichtlich im Dreieck für Redundanz. Doch ohne STP führt ein einziger Broadcast zum totalen Netzausfall, weil Ethernet-Frames kein Time-to-Live Feld besitzen! STP schaltet redundante Kabel stumm, bis ein Hauptkabel reißt."
             </div>
           </div>
         </div>
@@ -744,84 +754,85 @@
     </section>
 
     <!-- ---------------------------------------------------- -->
-    <!-- SLIDE 06: WI-FI SPEKTRUM (2.4 vs 5 vs 6 GHz)         -->
+    <!-- SLIDE 06: WI-FI FREQUENZSPEKTRUM (2.4 vs 5 vs 6 GHz) -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-6" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-2 bottom-10 right-10"></div>
+    <section id="slide-6" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-2 bottom-10 right-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="reveal-elem flex items-center justify-between border-b border-black/5 pb-4">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 06 • Funk-Physik</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">2,4 GHz vs. 5 GHz vs. 6 GHz</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 06 • Funkphysik & Bänder</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">2,4 GHz vs. 5 GHz vs. 6 GHz</h2>
           </div>
-          <span class="text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">Frequenzspektrum</span>
+          <span class="text-xs font-mono text-appleTextMuted bg-white px-3.5 py-1 rounded-full border border-black/5 shadow-sm">Spektrums-Vergleich</span>
         </div>
 
-        <!-- Comparison Table Minimal Glass -->
-        <div class="reveal-elem apple-glass rounded-3xl overflow-hidden">
+        <!-- Clean Table -->
+        <div class="reveal-elem apple-liquid-glass rounded-3xl overflow-hidden shadow-sm">
           <table class="w-full text-left text-xs sm:text-sm">
             <thead>
-              <tr class="bg-white/5 text-white/50 font-mono text-xs border-b border-white/10">
+              <tr class="bg-white/80 text-appleTextMuted font-mono text-xs border-b border-black/5">
                 <th class="py-3.5 px-4 font-normal">Kriterium</th>
-                <th class="py-3.5 px-4 font-semibold text-white">2,4 GHz Band</th>
-                <th class="py-3.5 px-4 font-semibold text-white">5 GHz Band</th>
-                <th class="py-3.5 px-4 font-semibold text-white">6 GHz Band (Wi-Fi 6E/7)</th>
+                <th class="py-3.5 px-4 font-bold text-appleTextDark">2,4 GHz Band</th>
+                <th class="py-3.5 px-4 font-bold text-appleTextDark">5 GHz Band</th>
+                <th class="py-3.5 px-4 font-bold text-appleTextDark">6 GHz Band (Wi-Fi 6E/7)</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-white/10 text-white/80 font-light">
+            <tbody class="divide-y divide-black/5 text-appleTextDark font-light">
               <tr>
-                <td class="py-3 px-4 font-medium text-white">Reichweite</td>
-                <td class="py-3 px-4">Sehr hoch (große Welle)</td>
+                <td class="py-3 px-4 font-medium">Reichweite</td>
+                <td class="py-3 px-4 font-semibold">Sehr hoch (große Welle)</td>
                 <td class="py-3 px-4">Mittel</td>
-                <td class="py-3 px-4">Gering (Sichtlinie ideal)</td>
+                <td class="py-3 px-4 text-appleTextMuted">Gering (Sichtlinie ideal)</td>
               </tr>
               <tr>
-                <td class="py-3 px-4 font-medium text-white">Wanddurchdringung</td>
-                <td class="py-3 px-4">Exzellent</td>
-                <td class="py-3 px-4">Mäßig (hohe Dämpfung)</td>
-                <td class="py-3 px-4">Gering (isoliert Räume sauber)</td>
+                <td class="py-3 px-4 font-medium">Wanddurchdringung</td>
+                <td class="py-3 px-4 font-semibold">Exzellent (durchdringt Beton)</td>
+                <td class="py-3 px-4">Mäßig (starke Dämpfung)</td>
+                <td class="py-3 px-4 text-appleTextMuted">Gering (isoliert Räume sauber)</td>
               </tr>
               <tr>
-                <td class="py-3 px-4 font-medium text-white">Kanalanzahl</td>
-                <td class="py-3 px-4 text-white/50">Nur 3 saubere Kanäle (1, 6, 11)</td>
+                <td class="py-3 px-4 font-medium">Kanalangebot</td>
+                <td class="py-3 px-4 text-appleTextMuted">Nur 3 Kanäle (1, 6, 11)</td>
                 <td class="py-3 px-4">Bis zu 25 Kanäle à 20 MHz</td>
-                <td class="py-3 px-4 text-white font-semibold">Gigantisch (bis 320 MHz Breite)</td>
+                <td class="py-3 px-4 font-bold text-black">Gigantisch (bis 320 MHz Breite)</td>
               </tr>
               <tr>
-                <td class="py-3 px-4 font-medium text-white">Störquellen</td>
-                <td class="py-3 px-4 text-white/50">Extrem voll (Bluetooth, Mikrowelle)</td>
-                <td class="py-3 px-4">Gering (Radar beachten)</td>
-                <td class="py-3 px-4 text-white font-semibold">Keine Altgeräte (Zero Legacy)</td>
+                <td class="py-3 px-4 font-medium">Störquellen</td>
+                <td class="py-3 px-4 text-appleTextMuted">Extrem voll (Bluetooth, Mikrowelle)</td>
+                <td class="py-3 px-4">Gering (Wetterradar beachten)</td>
+                <td class="py-3 px-4 font-bold text-black">Zero Legacy! Keine Altgeräte</td>
               </tr>
               <tr>
-                <td class="py-3 px-4 font-medium text-white">Fokus</td>
-                <td class="py-3 px-4">IoT, Smart Home, Distanz</td>
-                <td class="py-3 px-4">Enterprise Laptops, VoIP</td>
-                <td class="py-3 px-4">High-Density, VR, Next-Gen Workspaces</td>
+                <td class="py-3 px-4 font-medium">Einsatzgebiet</td>
+                <td class="py-3 px-4">IoT, Smart Home, Scanner</td>
+                <td class="py-3 px-4">Laptops, Smartphones, VoIP</td>
+                <td class="py-3 px-4">VR/AR, 8K Video, High-Density</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <div class="reveal-elem apple-glass-card p-4 rounded-2xl flex items-start gap-4">
-          <i data-lucide="radio-tower" class="w-5 h-5 text-white shrink-0 mt-0.5"></i>
+        <div class="reveal-elem apple-liquid-card p-4 rounded-2xl flex items-start gap-4">
+          <i data-lucide="radio-tower" class="w-5 h-5 text-black shrink-0 mt-0.5"></i>
           <p class="text-xs sm:text-sm text-appleTextMuted">
-            <strong class="text-white font-semibold">Kanalplanung im 2,4-GHz-Band:</strong> Kanäle sind 20 MHz breit, liegen aber nur 5 MHz auseinander. Daher sind ausschließlich die Kanäle <strong>1, 6 und 11</strong> überschneidungsfrei!
+            <strong class="text-black font-semibold">Warum im 2,4-GHz-Band nur Kanal 1, 6 und 11?</strong><br>
+            Jeder Kanal ist 20 MHz breit, aber die Frequenzmitten liegen nur 5 MHz auseinander. Wer z. B. Kanal 3 wählt, erzeugt schädliche Überlappungen für Kanal 1 und Kanal 6.
           </p>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-6')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-6')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-6" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 6):</strong>
-              "Funk ist reine Physik: Je höher die Frequenz, desto mehr Daten können wir transportieren, aber desto schneller verpufft das Signal an einer Betonwand. Mit 6 GHz haben wir nun erstmals seit 20 Jahren ein brandneues Spektrum, auf dem keine alten Geräte funken."
+          <div id="sn-6" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 6):</strong>
+              "Funk gehorcht der Physik: Je höher die Frequenz, desto mehr Daten können wir übertragen – aber desto schlechter dringt die Welle durch eine Wand. 2,4 GHz ist unser Lastenesel, während 6 GHz in modernen Konferenzräumen völlig störungsfreie Datenautobahnen bereitstellt."
             </div>
           </div>
         </div>
@@ -830,86 +841,89 @@
     </section>
 
     <!-- ---------------------------------------------------- -->
-    <!-- SLIDE 07: WI-FI 4 BIS 7 & CSMA/CA                    -->
+    <!-- SLIDE 07: INTERAKTIVER ROUTER MIT FUNKWELLEN (GENERATIONEN) -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-7" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-1 top-10 left-1/4"></div>
+    <section id="slide-7" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-1 top-10 left-1/4"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/5 pb-4 gap-3">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 07 • Protokolle & Medienzugriff</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Wi-Fi-Generationen & CSMA/CA</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 07 • Wi-Fi Funkwellen-Simulator</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Wi-Fi-Generationen & Funkwellen</h2>
           </div>
-          <span class="text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">802.11n bis 802.11be</span>
-        </div>
-
-        <!-- 4 Generation Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div class="reveal-elem apple-glass-card p-5 rounded-3xl">
-            <span class="text-[10px] font-mono text-white/40 block font-semibold">802.11n</span>
-            <h3 class="text-base font-bold text-white mt-1">Wi-Fi 4 (MIMO)</h3>
-            <p class="text-xs text-appleTextMuted mt-2 font-light">
-              Mehrere Sende- und Empfangsantennen gleichzeitig für höhere Signalstabilität.
-            </p>
-          </div>
-          <div class="reveal-elem apple-glass-card p-5 rounded-3xl">
-            <span class="text-[10px] font-mono text-white/40 block font-semibold">802.11ac</span>
-            <h3 class="text-base font-bold text-white mt-1">Wi-Fi 5 (MU-MIMO)</h3>
-            <p class="text-xs text-appleTextMuted mt-2 font-light">
-              Reines 5-GHz-Band. Mehrere Clients können im Downlink simultan bedient werden.
-            </p>
-          </div>
-          <div class="reveal-elem apple-glass p-5 rounded-3xl border border-white/30">
-            <span class="text-[10px] font-mono text-white block font-bold">802.11ax</span>
-            <h3 class="text-base font-bold text-white mt-1">Wi-Fi 6 (OFDMA)</h3>
-            <p class="text-xs text-white/80 mt-2 font-light">
-              Teilt den Funkkanal in Resource Units auf – wie viele parallele Fahrspuren für Clients.
-            </p>
-          </div>
-          <div class="reveal-elem apple-glass-card p-5 rounded-3xl">
-            <span class="text-[10px] font-mono text-white/40 block font-semibold">802.11be</span>
-            <h3 class="text-base font-bold text-white mt-1">Wi-Fi 7 (MLO)</h3>
-            <p class="text-xs text-appleTextMuted mt-2 font-light">
-              Multi-Link Operation: Sendet gleichzeitig über 5 GHz UND 6 GHz mit Latenzen unter 5 ms.
-            </p>
+          <!-- Wave Trigger -->
+          <div class="flex items-center gap-2">
+            <button onclick="triggerNextWifiWave()" class="px-5 py-2 rounded-full text-xs font-semibold bg-black text-white hover:bg-neutral-800 active:scale-95 transition flex items-center gap-2 shadow-md">
+              <i data-lucide="rss" class="w-3.5 h-3.5"></i>
+              <span>Nächste Funkwelle aussenden</span>
+            </button>
           </div>
         </div>
 
-        <!-- CSMA/CD vs CSMA/CA Comparison Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="reveal-elem apple-glass-card p-5 rounded-2xl">
-            <div class="flex items-center justify-between text-xs font-mono font-bold text-white mb-2">
-              <span>CSMA/CD (Collision Detection)</span>
-              <span class="text-white/40">Kabel</span>
+        <!-- Central Router Arena with Expanding Concentric Waves -->
+        <div class="reveal-elem apple-liquid-glass p-8 rounded-3xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center min-h-[380px]">
+          
+          <!-- Router & Animated Waves (6 Cols) -->
+          <div class="md:col-span-6 relative flex items-center justify-center min-h-[300px]">
+            
+            <!-- Concentric Wave Rings (Wi-Fi 4 to 7) -->
+            <div id="wifiWave4" class="wifi-wave-ring w-28 h-28 opacity-100 border-2 border-black/30"></div>
+            <div id="wifiWave5" class="wifi-wave-ring w-44 h-44 opacity-0 border-2 border-black/40"></div>
+            <div id="wifiWave6" class="wifi-wave-ring w-60 h-60 opacity-0 border-2 border-black/60"></div>
+            <div id="wifiWave7" class="wifi-wave-ring w-76 h-76 opacity-0 border-2 border-black"></div>
+
+            <!-- Central Apple-Styled Access Point / Router -->
+            <div class="z-20 w-24 h-24 rounded-full bg-black text-white flex flex-col items-center justify-center shadow-2xl relative border-4 border-white">
+              <i data-lucide="wifi" class="w-8 h-8"></i>
+              <span class="text-[9px] font-mono mt-0.5">AP Core</span>
             </div>
-            <p class="text-xs text-appleTextMuted font-light">
-              Senden und lauschen. Tritt eine Kollision auf, wird ein Jam-Signal gesendet. Im modernen Vollduplex-Switching überflüssig.
-            </p>
+            
           </div>
 
-          <div class="reveal-elem apple-glass p-5 rounded-2xl">
-            <div class="flex items-center justify-between text-xs font-mono font-bold text-white mb-2">
-              <span>CSMA/CA (Collision Avoidance)</span>
-              <span class="text-white/40">WLAN</span>
+          <!-- Generation Info Description Card (6 Cols) -->
+          <div class="md:col-span-6 space-y-4">
+            
+            <!-- Generation Selector Pills -->
+            <div class="flex flex-wrap gap-2 text-xs font-mono font-semibold">
+              <button onclick="setWifiGen(4)" id="genPill4" class="px-3 py-1.5 rounded-full bg-black text-white shadow-sm transition">Wi-Fi 4 (802.11n)</button>
+              <button onclick="setWifiGen(5)" id="genPill5" class="px-3 py-1.5 rounded-full bg-black/5 text-appleTextMuted hover:text-black transition">Wi-Fi 5 (802.11ac)</button>
+              <button onclick="setWifiGen(6)" id="genPill6" class="px-3 py-1.5 rounded-full bg-black/5 text-appleTextMuted hover:text-black transition">Wi-Fi 6 (802.11ax)</button>
+              <button onclick="setWifiGen(7)" id="genPill7" class="px-3 py-1.5 rounded-full bg-black/5 text-appleTextMuted hover:text-black transition">Wi-Fi 7 (802.11be)</button>
             </div>
-            <p class="text-xs text-white/80 font-light">
-              Kollisionen können im Funkraum während des Sendens nicht gehört werden! Daher: Vorher lauschen, Zufalls-Backoff abwarten und optional <strong>RTS/CTS</strong> nutzen.
-            </p>
+
+            <!-- Dynamic Content -->
+            <div class="bg-white p-5 rounded-2xl border border-black/10 shadow-sm space-y-2">
+              <span id="genYearBadge" class="text-[10px] font-mono font-bold text-appleTextMuted uppercase">Standard von 2009</span>
+              <h3 id="genTitle" class="text-xl font-bold text-appleTextDark">Wi-Fi 4: MIMO Mehrantennen-Technik</h3>
+              <p id="genDescription" class="text-xs sm:text-sm text-appleTextMuted leading-relaxed font-light">
+                Erstmals werden mehrere Antennen parallel eingesetzt, um Signale über Reflexionen zu verstärken. Bis zu 600 Mbit/s auf 2,4 GHz und 5 GHz.
+              </p>
+              <div id="genFeatureTag" class="pt-2 text-xs font-mono font-semibold text-black">
+                Schlüsselmerkmal: Single-User MIMO
+              </div>
+            </div>
+
+            <!-- CSMA/CA Note -->
+            <div class="text-[11px] text-appleTextMuted bg-black/5 p-3 rounded-xl border border-black/5 font-light">
+              <strong>Kollisionsschutz (CSMA/CA):</strong> Da Funkwellen ein geteiltes Medium sind (Halbduplex), lauscht jedes Gerät vor dem Senden ("Listen Before Talk") und fordert optional per <strong>RTS/CTS</strong> den Zeitschlitz an.
+            </div>
+
           </div>
+
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-7')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-7')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-7" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 7):</strong>
-              "Im WLAN teilen sich alle Nutzer ein einziges Funkmedium – es ist Halbduplex wie ein Funkgerät. CSMA/CA regelt die Verkehrsordnung. Der größte Durchbruch war Wi-Fi 6 mit OFDMA: Statt dass ein Client den ganzen Kanal für eine Mini-Nachricht blockiert, packen wir Pakete vieler Geräte gleichzeitig in denselben Zeitschlitz."
+          <div id="sn-7" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 7):</strong>
+              "Hier sehen wir die Evolution der Funkwellen: Bei Klick auf den Button breitet sich für jede Generation eine neue Welle aus. Wi-Fi 4 brachte MIMO. Wi-Fi 6 brachte OFDMA – damit wird der Funkkanal wie eine mehrspurige Autobahn für viele Geräte geteilt. Und Wi-Fi 7 funkt mit MLO sogar über zwei Frequenzbänder zeitgleich!"
             </div>
           </div>
         </div>
@@ -920,48 +934,48 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 08: ENTERPRISE ARCHITEKTUR (WLC & POE)         -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-8" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-2 bottom-10 left-1/3"></div>
+    <section id="slide-8" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-2 bottom-10 left-1/3"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="reveal-elem flex items-center justify-between border-b border-black/5 pb-4">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 08 • Enterprise Campus-Design</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Lightweight APs, Controller & PoE</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 08 • Campus-WLAN Architektur</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Lightweight APs, WLC & PoE</h2>
           </div>
-          <span class="text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">Split-MAC Architecture</span>
+          <span class="text-xs font-mono text-appleTextMuted bg-white px-3.5 py-1 rounded-full border border-black/5 shadow-sm">Split-MAC Konzept</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl">
-            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white mb-4">
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl">
+            <div class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4 shadow">
               <i data-lucide="cpu" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">1. WLC & CAPWAP</h3>
+            <h3 class="text-lg font-bold text-appleTextDark">1. WLC & CAPWAP-Tunnel</h3>
             <p class="text-xs text-appleTextMuted mt-2 leading-relaxed font-light">
-              Keine Einzelkonfiguration! Lightweight APs verbinden sich über verschlüsselte <strong>CAPWAP-Tunnel</strong> mit dem zentralen Wireless LAN Controller.
+              Keine Einzelkonfiguration! Lightweight Access Points verbinden sich über verschlüsselte <strong>CAPWAP-Tunnel</strong> mit dem zentralen Wireless LAN Controller.
             </p>
           </div>
 
-          <div class="reveal-elem apple-glass p-6 rounded-3xl border border-white/30">
-            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center mb-4">
+          <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl border-2 border-black/15 shadow-xl">
+            <div class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4 shadow">
               <i data-lucide="activity" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">2. Fast Roaming</h3>
-            <p class="text-xs text-white/80 mt-2 leading-relaxed font-light">
-              Mit den Standards <strong>802.11r/k/v</strong> übergeben sich die APs den Client in unter 50 Millisekunden. Kein Unterbrechen von Video- oder Telefonanrufen!
+            <h3 class="text-lg font-bold text-appleTextDark">2. Seamless Fast Roaming</h3>
+            <p class="text-xs text-appleTextDark/80 mt-2 leading-relaxed font-light">
+              Mit <strong>802.11r/k/v</strong> übergeben sich die APs den Client in unter 50 Millisekunden. Kein Abbruch von Video- oder Teams-Telefonaten!
             </p>
           </div>
 
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl">
-            <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white mb-4">
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl">
+            <div class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center mb-4 shadow">
               <i data-lucide="zap" class="w-5 h-5"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">3. Power over Ethernet</h3>
+            <h3 class="text-lg font-bold text-appleTextDark">3. Power over Ethernet</h3>
             <p class="text-xs text-appleTextMuted mt-2 leading-relaxed font-light">
-              Keine Steckdosen an Hallendecken nötig: Der Access Point bezieht Strom und Gigabit-Daten zeitgleich über das Kupfer-Patchkabel (PoE+ bis 30W / PoE++ bis 90W).
+              Keine Steckdosen an Betondecken: Der Access Point bezieht Strom und 10G-Daten direkt über das normale Ethernet-Patchkabel (PoE+ 802.3at).
             </p>
           </div>
 
@@ -969,14 +983,14 @@
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-8')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-8')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-8" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 8):</strong>
-              "In großen Unternehmen konfigurieren wir niemals Access Points von Hand. Wir nutzen sogenannte Lightweight APs: Sie sind quasi das Funkauge, während das Gehirn zentral im WLC sitzt. Über PoE sparen wir zusätzlich tausende Meter Stromkabel ein."
+          <div id="sn-8" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 8):</strong>
+              "In großen Unternehmen konfigurieren wir niemals Access Points wie eine FritzBox einzeln. Wir nutzen sogenannte Lightweight APs: Sie sind das Funkauge, während das Gehirn zentral im WLC sitzt. Durch PoE sparen wir zusätzlich tausende Meter Stromkabel ein."
             </div>
           </div>
         </div>
@@ -987,73 +1001,73 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 09: ENTERPRISE SECURITY (802.1X & RADIUS)      -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-9" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-1 top-10 right-10"></div>
+    <section id="slide-9" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-1 top-10 right-10"></div>
 
       <div class="max-w-5xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="reveal-elem flex items-center justify-between border-b border-black/5 pb-4">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 09 • Authentifizierung</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">WPA-Personal vs. WPA-Enterprise (802.1X)</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 09 • Authentifizierung & Zero Trust</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">WPA-Personal vs. WPA-Enterprise (802.1X)</h2>
           </div>
-          <span class="text-xs font-mono text-white/50 bg-white/5 px-3 py-1 rounded-full border border-white/10">RADIUS & EAP-TLS</span>
+          <span class="text-xs font-mono text-appleTextMuted bg-white px-3.5 py-1 rounded-full border border-black/5 shadow-sm">RADIUS & Active Directory</span>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl">
-            <span class="text-[10px] font-mono text-white/40 block">WPA2-PSK</span>
-            <h3 class="text-base font-bold text-white mt-1">Pre-Shared Key</h3>
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted block font-bold">WPA2-PSK</span>
+            <h3 class="text-base font-bold text-appleTextDark mt-1">Pre-Shared Key</h3>
             <p class="text-xs text-appleTextMuted mt-2 font-light">
               Ein gemeinsames Kennwort für alle Geräte. Kündigt ein Mitarbeiter, muss das Kennwort überall geändert werden.
             </p>
           </div>
 
-          <div class="reveal-elem apple-glass-card p-6 rounded-3xl">
-            <span class="text-[10px] font-mono text-white/40 block">WPA3-SAE</span>
-            <h3 class="text-base font-bold text-white mt-1">Dragonfly Handshake</h3>
+          <div class="reveal-elem apple-liquid-card p-6 rounded-3xl">
+            <span class="text-[10px] font-mono text-appleTextMuted block font-bold">WPA3-SAE</span>
+            <h3 class="text-base font-bold text-appleTextDark mt-1">Dragonfly Handshake</h3>
             <p class="text-xs text-appleTextMuted mt-2 font-light">
-              Forward Secrecy: Vergangener Funkverkehr kann auch bei nachträglich bekanntem Passwort nicht entschlüsselt werden.
+              Forward Secrecy: Vergangener Funkverkehr kann auch bei nachträglich bekanntem Kennwort nicht entschlüsselt werden.
             </p>
           </div>
 
-          <div class="reveal-elem apple-glass p-6 rounded-3xl border border-white/30">
-            <span class="text-[10px] font-mono text-white font-bold block">WPA-Enterprise (802.1X)</span>
-            <h3 class="text-base font-bold text-white mt-1">RADIUS & Zertifikate</h3>
-            <p class="text-xs text-white/80 mt-2 font-light">
+          <div class="reveal-elem apple-liquid-glass p-6 rounded-3xl border-2 border-black/15 shadow-xl">
+            <span class="text-[10px] font-mono text-black font-bold block">WPA-Enterprise (802.1X)</span>
+            <h3 class="text-base font-bold text-appleTextDark mt-1">RADIUS & Zertifikate</h3>
+            <p class="text-xs text-appleTextDark/80 mt-2 font-light">
               Jeder Nutzer loggt sich mit eigenem AD-Account oder Zertifikat ein. Sperrung erfolgt zentral mit einem Klick!
             </p>
           </div>
         </div>
 
         <!-- 802.1X Triad Flow -->
-        <div class="reveal-elem apple-glass p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-around gap-2 text-center text-xs">
+        <div class="reveal-elem apple-liquid-glass p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-around gap-2 text-center text-xs">
           <div>
-            <span class="font-bold text-white block font-mono">1. Supplicant</span>
+            <span class="font-bold text-black block font-mono">1. Supplicant</span>
             <span class="text-appleTextMuted">Client-Gerät mit Benutzerkonto</span>
           </div>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-white/30 hidden sm:block"></i>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-black/40 hidden sm:block"></i>
           <div>
-            <span class="font-bold text-white block font-mono">2. Authenticator</span>
+            <span class="font-bold text-black block font-mono">2. Authenticator</span>
             <span class="text-appleTextMuted">AP schleift EAP-Pakete durch</span>
           </div>
-          <i data-lucide="arrow-right" class="w-4 h-4 text-white/30 hidden sm:block"></i>
+          <i data-lucide="arrow-right" class="w-4 h-4 text-black/40 hidden sm:block"></i>
           <div>
-            <span class="font-bold text-white block font-mono">3. RADIUS Server</span>
+            <span class="font-bold text-black block font-mono">3. RADIUS Server</span>
             <span class="text-appleTextMuted">Prüft gegen Active Directory</span>
           </div>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-9')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-9')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-9" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 9):</strong>
-              "In Firmennetzen gibt es kein geteiltes WLAN-Passwort. Jeder Mitarbeiter authentifiziert sich über seinen eigenen Domänen-Account via 802.1X. Verlässt jemand das Unternehmen, sperrt die IT sein Domänenkonto – und der WLAN-Zugang ist augenblicklich erloschen."
+          <div id="sn-9" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 9):</strong>
+              "In Firmennetzen gibt es keine Passwörter auf Zetteln. Jeder Mitarbeiter authentifiziert sich über seinen eigenen Domänen-Account via 802.1X. Verlässt jemand das Unternehmen, sperrt die IT sein Domänenkonto – und der WLAN-Zugang ist augenblicklich erloschen."
             </div>
           </div>
         </div>
@@ -1064,45 +1078,45 @@
     <!-- ---------------------------------------------------- -->
     <!-- SLIDE 10: PRÜFUNGS-QUIZ & VERIFIKATION               -->
     <!-- ---------------------------------------------------- -->
-    <section id="slide-10" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-white/10">
-      <div class="liquid-orb-2 bottom-10 right-10"></div>
+    <section id="slide-10" class="slide-section flex flex-col justify-center px-6 sm:px-12 py-20 relative overflow-hidden border-t border-black/5">
+      <div class="liquid-orb-light-2 bottom-10 right-10"></div>
 
       <div class="max-w-4xl w-full mx-auto space-y-6 relative z-10">
         
-        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-white/10 pb-4 gap-3">
+        <div class="reveal-elem flex flex-col sm:flex-row sm:items-center justify-between border-b border-black/5 pb-4 gap-3">
           <div>
-            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Slide 10 • Wissens-Check</span>
-            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">Interaktives Prüfungs-Quiz</h2>
+            <span class="text-xs font-mono text-appleTextMuted uppercase tracking-widest">Folie 10 • Interaktiver Wissens-Check</span>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-appleTextDark mt-1">Prüfungs-Quiz (5 Fragen)</h2>
           </div>
-          <div class="text-xs font-mono bg-white/5 px-4 py-1.5 rounded-full border border-white/10 text-white">
-            Score: <span id="apQuizScore" class="font-bold">0</span> / 5
+          <div class="text-xs font-mono bg-white px-4 py-1.5 rounded-full border border-black/10 text-appleTextDark shadow-sm">
+            Score: <span id="cleanQuizScore" class="font-bold">0</span> / 5
           </div>
         </div>
 
-        <div id="apQuizContainer" class="space-y-3 reveal-elem">
+        <div id="cleanQuizContainer" class="space-y-3 reveal-elem">
           <!-- Populated by JavaScript -->
         </div>
 
-        <div class="reveal-elem pt-4 border-t border-white/10 flex justify-between items-center">
-          <button onclick="appleResetQuiz()" class="px-4 py-2 rounded-full text-xs font-mono border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition">
+        <div class="reveal-elem pt-4 border-t border-black/5 flex justify-between items-center">
+          <button onclick="cleanResetQuiz()" class="px-4 py-2 rounded-full text-xs font-mono border border-black/15 text-appleTextDark hover:bg-black/5 transition">
             Quiz zurücksetzen
           </button>
-          <a href="#slide-1" class="text-xs font-mono text-white/60 hover:text-white flex items-center gap-1 transition">
+          <a href="#slide-1" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-1 transition">
             <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
-            <span>Zurück zum Anfang</span>
+            <span>Zurück zum Anfang (Folie 1)</span>
           </a>
         </div>
 
         <!-- Speaker Drawer -->
         <div>
-          <button onclick="toggleSpeakerNote('sn-10')" class="text-xs font-mono text-appleTextMuted hover:text-white flex items-center gap-2 transition">
+          <button onclick="toggleSpeakerNote('sn-10')" class="text-xs font-mono text-appleTextMuted hover:text-black flex items-center gap-2 transition">
             <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
             <span>Sprechernotiz einblenden</span>
           </button>
-          <div id="sn-10" class="speaker-drawer overflow-hidden max-h-0 bg-white/5 border border-white/10 rounded-2xl p-0 mt-2 transition-all">
-            <div class="p-4 text-xs sm:text-sm text-appleWhite leading-relaxed">
-              <strong class="text-white block font-mono uppercase text-[10px] tracking-wider mb-1">Präsentationsnotiz (Folie 10):</strong>
-              "Damit haben wir die Brücke geschlagen: Von der Bitübertragung und ASIC-Switching-Logik über VLANs und Spanning Tree bis hin zur Controller-basierten WLAN-Architektur. Vielen Dank für Ihre Aufmerksamkeit – lassen Sie uns das Gelernte nun direkt überprüfen!"
+          <div id="sn-10" class="speaker-drawer overflow-hidden max-h-0 bg-white border border-black/10 rounded-2xl p-0 mt-2 transition-all shadow-sm">
+            <div class="p-4 text-xs sm:text-sm text-appleTextDark leading-relaxed">
+              <strong class="text-black block font-mono uppercase text-[10px] tracking-wider mb-1">Sprechtext (Folie 10):</strong>
+              "Damit haben wir die Brücke geschlagen: Von der ASIC-Switching-Logik über VLANs und Spanning Tree bis hin zur Controller-basierten WLAN-Architektur. Vielen Dank für Ihre Aufmerksamkeit – lassen Sie uns das Gelernte nun direkt mit diesen 5 Fragen überprüfen!"
             </div>
           </div>
         </div>
@@ -1113,7 +1127,7 @@
   </main>
 
   <!-- ======================================================== -->
-  <!-- JAVASCRIPT: LIQUID ANIMATIONS, SLIDE NAVIGATION & QUIZ  -->
+  <!-- JAVASCRIPT: SLIDE NAVIGATION, PORT & WAVE CONTROLLER     -->
   <!-- ======================================================== -->
   <script>
     lucide.createIcons();
@@ -1154,9 +1168,9 @@
             // Update Right Indicators
             document.querySelectorAll('.slide-dot').forEach((dot, idx) => {
               if (idx + 1 === num) {
-                dot.className = "slide-dot w-2 h-2 rounded-full bg-white transition-all scale-150 ring-2 ring-white/30";
+                dot.className = "slide-dot w-2 h-2 rounded-full bg-black transition-all scale-150 ring-2 ring-black/20";
               } else {
-                dot.className = "slide-dot w-2 h-2 rounded-full bg-white/30 hover:bg-white/70 transition-all";
+                dot.className = "slide-dot w-2 h-2 rounded-full bg-black/20 hover:bg-black/60 transition-all";
               }
             });
           }
@@ -1192,124 +1206,90 @@
     }
 
     // ----------------------------------------------------
-    // Slide 03: MAC Learning Simulator Logic
+    // Slide 03: Switch Port Inspector (Scroll & Click)
     // ----------------------------------------------------
-    let appleSimStep = 0;
+    const portData = {
+      1: {
+        title: "Port 1: Source-MAC Registrierung & CAM-Speicher",
+        desc: "Sobald PC A ein Paket sendet, analysiert der ASIC-Chip die Quell-Adresse AA:AA:01. Er ordnet diesen Port im CAM-Speicher zu. Unbekannte Ziel-Adressen werden an alle anderen Ports (Flooding) weitergeleitet.",
+        badge: "Fokus: Port Gi0/1",
+        mac: "AA:AA:AA:01",
+        port: "Gi0/1"
+      },
+      2: {
+        title: "Port 2: Vollduplex Mikrosegmentierung (Buchhaltung)",
+        desc: "Port 2 bildet eine vollkommen isolierte Kollisionsdomäne. PC B kann mit 1000 Mbit/s zeitgleich senden und empfangen (Vollduplex), ohne dass Datenpakete von Port 1 stören.",
+        badge: "Fokus: Port Gi0/2",
+        mac: "BB:BB:BB:02",
+        port: "Gi0/2"
+      },
+      3: {
+        title: "Port 3: Unicast Forwarding (Server / CRM)",
+        desc: "Weil der Switch weiß, dass die MAC CC:CC:03 an Port 3 liegt, werden Pakete für diesen Server zielgerichtet als Punkt-zu-Punkt Unicast weitergeleitet. Kein Flooding nötig!",
+        badge: "Fokus: Port Gi0/3",
+        mac: "CC:CC:CC:03",
+        port: "Gi0/3"
+      },
+      4: {
+        title: "Port 4: Broadcast & Unknown Unicast Flooding (Gäste)",
+        desc: "Trifft ein Broadcast (FF:FF:FF:FF:FF:FF) am Switch ein, wird er an alle Ports außer den Absender repliziert. Erst durch VLANs sperren wir diesen Port ab.",
+        badge: "Fokus: Port Gi0/4",
+        mac: "DD:DD:DD:04",
+        port: "Gi0/4"
+      }
+    };
 
-    function appleResetSim() {
-      appleSimStep = 0;
-      document.getElementById('appleMacTableBody').innerHTML = `
-        <div id="appleMacEmpty" class="text-white/30 italic py-8 text-center text-xs">
-          (Kein Frame empfangen - Tabelle leer)
-        </div>
-      `;
-      document.getElementById('appleSimBannerText').innerText = "Bereit. Klicke auf '1. Paket senden', um den Lernprozess zu starten.";
-      document.getElementById('appleSimBtnText').innerText = "1. Paket senden (PC A ➔ PC C)";
+    let currentSelectedPort = 1;
 
-      ['apNodePcA', 'apNodePcB', 'apNodePcC', 'apNodePcD'].forEach(id => {
-        document.getElementById(id).className = "bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all";
-      });
+    function selectPort(portNum) {
+      currentSelectedPort = portNum;
       for (let i = 1; i <= 4; i++) {
-        document.getElementById(`apPort${i}`).className = "text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50";
+        const btn = document.getElementById(`rjPort${i}`);
+        if (i === portNum) {
+          btn.className = "switch-chassis-rj45 active-port apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer";
+        } else {
+          btn.className = "switch-chassis-rj45 apple-liquid-card p-4 rounded-2xl border text-left cursor-pointer";
+        }
       }
-      for (let i = 1; i <= 3; i++) {
-        document.getElementById(`apBadge${i}`).className = "px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/10";
-      }
+
+      const data = portData[portNum];
+      document.getElementById('inspectorPortBadge').innerText = data.badge;
+      document.getElementById('inspectorPortTitle').innerText = data.title;
+      document.getElementById('inspectorPortDesc').innerText = data.desc;
+      document.getElementById('inspectorCamRow').innerHTML = `
+        <span>${data.port}</span>
+        <span>${data.mac}</span>
+        <span class="text-emerald-600">300s (Aktiv)</span>
+      `;
     }
 
-    function appleNextSimStep() {
-      const banner = document.getElementById('appleSimBannerText');
-      const btnText = document.getElementById('appleSimBtnText');
-      const tableBody = document.getElementById('appleMacTableBody');
-
-      if (appleSimStep === 0) {
-        // Step 1: Learning PC A
-        document.getElementById('apNodePcA').classList.add('border-white', 'bg-white/20');
-        document.getElementById('apPort1').className = "text-[9px] font-mono text-center py-1 rounded bg-white text-black font-bold";
-        document.getElementById('apBadge1').className = "px-2.5 py-1 rounded-full bg-white text-black font-bold";
-
-        const empty = document.getElementById('appleMacEmpty');
-        if (empty) empty.remove();
-
-        tableBody.innerHTML += `
-          <div class="grid grid-cols-3 text-xs py-1.5 px-1 rounded bg-white/10 border border-white/20 text-white font-mono">
-            <span>Port 1</span>
-            <span>AA:AA:01</span>
-            <span>Learned</span>
-          </div>
-        `;
-        banner.innerHTML = "<strong>Schritt 1:</strong> Frame empfangen. Switch speichert Source-MAC <code>AA:AA:01</code> an Port 1.";
-        btnText.innerText = "2. Unknown Unicast Flooding";
-        appleSimStep = 1;
-
-      } else if (appleSimStep === 1) {
-        // Step 2: Flooding
-        document.getElementById('apNodePcB').classList.add('border-white/40', 'bg-white/10');
-        document.getElementById('apNodePcC').classList.add('border-white', 'bg-white/20');
-        document.getElementById('apNodePcD').classList.add('border-white/40', 'bg-white/10');
-
-        for (let i = 2; i <= 4; i++) {
-          document.getElementById(`apPort${i}`).className = "text-[9px] font-mono text-center py-1 rounded bg-white/30 border border-white text-white font-bold animate-pulse";
-        }
-        document.getElementById('apBadge2').className = "px-2.5 py-1 rounded-full bg-white text-black font-bold";
-
-        banner.innerHTML = "<strong>Schritt 2 (Flooding):</strong> Ziel CC:CC:03 unbekannt. Switch flutet Frame an alle Ports außer Absender.";
-        btnText.innerText = "3. Antwort (PC C ➔ PC A)";
-        appleSimStep = 2;
-
-      } else if (appleSimStep === 2) {
-        // Step 3: Direct Unicast
-        ['apNodePcA', 'apNodePcB', 'apNodePcC', 'apNodePcD'].forEach(id => {
-          document.getElementById(id).className = "bg-white/5 border border-white/10 p-2.5 rounded-2xl text-center transition-all";
-        });
-        document.getElementById('apNodePcC').classList.add('border-white', 'bg-white/25');
-        document.getElementById('apNodePcA').classList.add('border-white', 'bg-white/25');
-
-        for (let i = 1; i <= 4; i++) {
-          document.getElementById(`apPort${i}`).className = "text-[9px] font-mono text-center py-1 rounded bg-white/5 border border-white/10 text-white/50";
-        }
-        document.getElementById('apPort3').className = "text-[9px] font-mono text-center py-1 rounded bg-white text-black font-bold";
-        document.getElementById('apPort1').className = "text-[9px] font-mono text-center py-1 rounded bg-white text-black font-bold";
-
-        tableBody.innerHTML += `
-          <div class="grid grid-cols-3 text-xs py-1.5 px-1 rounded bg-white/10 border border-white/20 text-white font-mono mt-1">
-            <span>Port 3</span>
-            <span>CC:CC:03</span>
-            <span>Learned</span>
-          </div>
-        `;
-        document.getElementById('apBadge3').className = "px-2.5 py-1 rounded-full bg-white text-black font-bold";
-
-        banner.innerHTML = "<strong>Schritt 3:</strong> PC C antwortet. Switch speichert Port 3 und leitet zielgerichtet als Punkt-zu-Punkt Unicast weiter!";
-        btnText.innerText = "Simulation Neustart";
-        appleSimStep = 3;
-
-      } else {
-        appleResetSim();
-      }
+    function inspectNextPort() {
+      let next = currentSelectedPort + 1;
+      if (next > 4) next = 1;
+      selectPort(next);
     }
 
     // ----------------------------------------------------
     // Slide 04: VLAN Toggle
     // ----------------------------------------------------
-    function appleSetVlanMode(mode) {
-      const btnAccess = document.getElementById('apBtnAccess');
-      const btnTrunk = document.getElementById('apBtnTrunk');
-      const tagBlock = document.getElementById('apTagBlock');
-      const tagLabel = document.getElementById('apFrameTagLabel');
-      const badge = document.getElementById('apUplinkBadge');
-      const expl = document.getElementById('apVlanExpl');
+    function cleanSetVlanMode(mode) {
+      const btnAccess = document.getElementById('cleanBtnAccess');
+      const btnTrunk = document.getElementById('cleanBtnTrunk');
+      const tagBlock = document.getElementById('cleanTagBlock');
+      const tagLabel = document.getElementById('cleanFrameTagLabel');
+      const badge = document.getElementById('cleanUplinkBadge');
+      const expl = document.getElementById('cleanVlanExpl');
 
       if (mode === 'access') {
-        btnAccess.className = "px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow transition";
-        btnTrunk.className = "px-4 py-1.5 rounded-full text-xs font-semibold text-white/70 hover:text-white transition";
+        btnAccess.className = "px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow-sm transition";
+        btnTrunk.className = "px-4 py-1.5 rounded-full text-xs font-semibold text-appleTextMuted hover:text-black transition";
         tagBlock.classList.add('hidden');
-        tagLabel.innerText = "Untagged Standard Frame";
-        badge.innerText = "Access: 1 VLAN";
-        expl.innerHTML = "<strong>Access-Port:</strong> Endgeräte verstehen keine Tags. Der Frame bleibt ungetaggt und gehört fest zu einem einzigen VLAN.";
+        tagLabel.innerText = "Untagged Standard-Frame";
+        badge.innerText = "Access: Nur 1 VLAN";
+        expl.innerHTML = "<strong>Access-Port:</strong> Endgeräte verstehen keine Tags. Der Frame bleibt ungetaggt und gehört exklusiv zu diesem VLAN.";
       } else {
-        btnTrunk.className = "px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow transition";
-        btnAccess.className = "px-4 py-1.5 rounded-full text-xs font-semibold text-white/70 hover:text-white transition";
+        btnTrunk.className = "px-4 py-1.5 rounded-full text-xs font-semibold bg-white text-black shadow-sm transition";
+        btnAccess.className = "px-4 py-1.5 rounded-full text-xs font-semibold text-appleTextMuted hover:text-black transition";
         tagBlock.classList.remove('hidden');
         tagLabel.innerText = "802.1Q Tagged Frame aktiv";
         badge.innerText = "Trunk: 802.1Q Tagged";
@@ -1320,34 +1300,106 @@
     // ----------------------------------------------------
     // Slide 05: STP Toggle
     // ----------------------------------------------------
-    let appleStpFailed = false;
+    let cleanStpFailed = false;
 
-    function appleToggleStp() {
-      appleStpFailed = !appleStpFailed;
-      const btnText = document.getElementById('apBtnStpText');
-      const badge = document.getElementById('apStpBadge');
-      const sw3 = document.getElementById('apSw3PortStatus');
-      const log = document.getElementById('apStpLog');
+    function cleanToggleStp() {
+      cleanStpFailed = !cleanStpFailed;
+      const btnText = document.getElementById('cleanBtnStpText');
+      const badge = document.getElementById('cleanStpBadge');
+      const sw3 = document.getElementById('cleanSw3PortStatus');
+      const log = document.getElementById('cleanStpLog');
 
-      if (appleStpFailed) {
+      if (cleanStpFailed) {
         btnText.innerText = "Hauptlink wiederherstellen";
-        badge.className = "px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-white text-black";
+        badge.className = "px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-black text-white shadow-sm";
         badge.innerText = "FORWARDING";
         sw3.innerText = "Port 2: Designated (FORWARDING)";
         log.innerHTML = "⚡ <strong>Kabelbruch!</strong> RSTP (802.1w) erkennt den Ausfall und schaltet den Backup-Link in < 1 Sekunde auf <strong>FORWARDING</strong>.";
       } else {
-        btnText.innerText = "Hauptlink trennen (Failover testen)";
-        badge.className = "px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-white/10 text-white border border-white/20";
+        btnText.innerText = "Hauptlink kappen (Failover testen)";
+        badge.className = "px-3.5 py-1 rounded-full text-xs font-mono font-bold bg-black/5 text-black border border-black/15 shadow-sm";
         badge.innerText = "BLOCKING";
         sw3.innerText = "Port 2: Alternate (BLOCKING)";
-        log.innerHTML = "Normale Topologie: Redundanter Link ist im Status <strong>BLOCKING</strong>. Keine Schleife, kein Broadcast-Sturm!";
+        log.innerHTML = "Normale Topologie: Der redundante Link ist im Status <strong>BLOCKING</strong>. Keine Schleife, kein Broadcast-Sturm!";
       }
+    }
+
+    // ----------------------------------------------------
+    // Slide 07: Wi-Fi Waves Generation Controller
+    // ----------------------------------------------------
+    const wifiGenData = {
+      4: {
+        year: "Standard von 2009",
+        title: "Wi-Fi 4: MIMO Mehrantennen-Technik (802.11n)",
+        desc: "Erstmals werden mehrere Antennen parallel eingesetzt, um Signale über Reflexionen zu verstärken. Bis zu 600 Mbit/s auf 2,4 GHz und 5 GHz.",
+        feat: "Schlüsselmerkmal: Single-User MIMO & 40 MHz Kanalbündelung",
+        waves: [4]
+      },
+      5: {
+        year: "Standard von 2013",
+        title: "Wi-Fi 5: Gigabit-WLAN im 5-GHz-Band (802.11ac)",
+        desc: "Reines 5-GHz-Spektrum mit bis zu 80 und 160 MHz breiten Kanälen. Einführung von Multi-User MIMO (MU-MIMO) im Downlink.",
+        feat: "Schlüsselmerkmal: MU-MIMO bedient mehrere Clients zeitgleich",
+        waves: [4, 5]
+      },
+      6: {
+        year: "Standard von 2019 / 2021",
+        title: "Wi-Fi 6 / 6E: High-Density & OFDMA (802.11ax)",
+        desc: "Der Meilenstein für Großraumbüros: OFDMA teilt den Funkkanal in kleine Resource Units auf. 6E öffnet das saubere 6-GHz-Band ohne Störer.",
+        feat: "Schlüsselmerkmal: OFDMA & 6-GHz-Frequenzband",
+        waves: [4, 5, 6]
+      },
+      7: {
+        year: "Standard von 2024+",
+        title: "Wi-Fi 7: Multi-Link Operation (802.11be)",
+        desc: "Extrem-Durchsatz: Ein Gerät kann simultan über 5 GHz UND 6 GHz funken (MLO). Bis zu 320 MHz Bandbreite und Latenzen unter 5 Millisekunden.",
+        feat: "Schlüsselmerkmal: Multi-Link Operation (MLO) & 4096-QAM",
+        waves: [4, 5, 6, 7]
+      }
+    };
+
+    let currentWifiGen = 4;
+
+    function setWifiGen(gen) {
+      currentWifiGen = gen;
+      for (let g = 4; g <= 7; g++) {
+        const pill = document.getElementById(`genPill${g}`);
+        if (g === gen) {
+          pill.className = "px-3 py-1.5 rounded-full bg-black text-white shadow-sm transition";
+        } else {
+          pill.className = "px-3 py-1.5 rounded-full bg-black/5 text-appleTextMuted hover:text-black transition";
+        }
+      }
+
+      const data = wifiGenData[gen];
+      document.getElementById('genYearBadge').innerText = data.year;
+      document.getElementById('genTitle').innerText = data.title;
+      document.getElementById('genDescription').innerText = data.desc;
+      document.getElementById('genFeatureTag').innerText = data.feat;
+
+      // Update Wave Rings Visibility
+      for (let g = 4; g <= 7; g++) {
+        const wave = document.getElementById(`wifiWave${g}`);
+        if (data.waves.includes(g)) {
+          wave.classList.remove('opacity-0');
+          wave.classList.add('opacity-100');
+        } else {
+          wave.classList.remove('opacity-100');
+          wave.classList.add('opacity-0');
+        }
+      }
+    }
+
+    function triggerNextWifiWave() {
+      let next = currentWifiGen + 1;
+      if (next > 7) next = 4;
+      setWifiGen(next);
     }
 
     // ----------------------------------------------------
     // Slide 10: Prüfungs-Quiz
     // ----------------------------------------------------
-    const quizQuestions = [
+    const cleanQuizQuestions = [
       {
         q: "1. Woran lernt ein Layer-2 Switch die Zuordnung von MAC-Adressen zu Ports?",
         opts: [
@@ -1357,7 +1409,7 @@
           "Durch automatische Abfragen im Active Directory."
         ],
         correct: 0,
-        exp: "Switch-Grundregel: Ein Switch lernt niemals anhand der Ziel-Adresse, sondern ausschließlich an der Quell-MAC."
+        exp: "Switch-Grundregel: Ein Switch lernt niemals an der Ziel-Adresse, sondern ausschließlich an der Quell-MAC."
       },
       {
         q: "2. Welchen Zweck erfüllt das 4-Byte 802.1Q-Tag auf einer Trunk-Leitung?",
@@ -1405,87 +1457,89 @@
       }
     ];
 
-    let userQuizAnswers = {};
+    let cleanQuizAnswers = {};
 
-    function renderAppleQuiz() {
-      const container = document.getElementById('apQuizContainer');
+    function renderCleanQuiz() {
+      const container = document.getElementById('cleanQuizContainer');
       container.innerHTML = '';
 
-      quizQuestions.forEach((item, qIdx) => {
+      cleanQuizQuestions.forEach((item, qIdx) => {
         const box = document.createElement('div');
-        box.className = "apple-glass-card p-4 rounded-2xl space-y-2";
+        box.className = "apple-liquid-card p-4 rounded-2xl space-y-2";
         
         let optHtml = '';
         item.opts.forEach((opt, oIdx) => {
           optHtml += `
-            <button onclick="handleAppleQuizAnswer(${qIdx}, ${oIdx})" id="qBtn_${qIdx}_${oIdx}" class="w-full text-left p-2.5 rounded-xl text-xs border border-white/10 bg-white/5 hover:bg-white/10 text-white/80 transition flex items-center justify-between">
+            <button onclick="handleCleanQuizAnswer(${qIdx}, ${oIdx})" id="cqBtn_${qIdx}_${oIdx}" class="w-full text-left p-2.5 rounded-xl text-xs border border-black/10 bg-white hover:bg-black/5 text-appleTextDark transition flex items-center justify-between shadow-sm">
               <span>${opt}</span>
-              <span id="qIcon_${qIdx}_${oIdx}"></span>
+              <span id="cqIcon_${qIdx}_${oIdx}"></span>
             </button>
           `;
         });
 
         box.innerHTML = `
-          <h4 class="text-xs sm:text-sm font-semibold text-white">${item.q}</h4>
+          <h4 class="text-xs sm:text-sm font-semibold text-appleTextDark">${item.q}</h4>
           <div class="space-y-1.5 mt-2">${optHtml}</div>
-          <div id="qFeedback_${qIdx}" class="hidden p-2.5 rounded-xl text-xs font-mono mt-2"></div>
+          <div id="cqFeedback_${qIdx}" class="hidden p-2.5 rounded-xl text-xs font-mono mt-2"></div>
         `;
         container.appendChild(box);
       });
-      updateAppleScore();
+      updateCleanScore();
     }
 
-    function handleAppleQuizAnswer(qIdx, oIdx) {
-      if (userQuizAnswers[qIdx] !== undefined) return;
-      userQuizAnswers[qIdx] = oIdx;
+    function handleCleanQuizAnswer(qIdx, oIdx) {
+      if (cleanQuizAnswers[qIdx] !== undefined) return;
+      cleanQuizAnswers[qIdx] = oIdx;
 
-      const q = quizQuestions[qIdx];
-      const fb = document.getElementById(`qFeedback_${qIdx}`);
+      const q = cleanQuizQuestions[qIdx];
+      const fb = document.getElementById(`cqFeedback_${qIdx}`);
       fb.classList.remove('hidden');
 
       const isCorrect = (oIdx === q.correct);
 
       q.opts.forEach((_, idx) => {
-        const btn = document.getElementById(`qBtn_${qIdx}_${idx}`);
+        const btn = document.getElementById(`cqBtn_${qIdx}_${idx}`);
         btn.disabled = true;
         if (idx === q.correct) {
-          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border border-white bg-white text-black font-semibold flex items-center justify-between";
-          document.getElementById(`qIcon_${qIdx}_${idx}`).innerHTML = "<i data-lucide='check' class='w-3.5 h-3.5 stroke-black'></i>";
+          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border-2 border-black bg-black text-white font-semibold flex items-center justify-between shadow-sm";
+          document.getElementById(`cqIcon_${qIdx}_${idx}`).innerHTML = "<i data-lucide='check' class='w-3.5 h-3.5 stroke-white'></i>";
         } else if (idx === oIdx && !isCorrect) {
-          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border border-white/20 bg-white/5 text-white/40 line-through flex items-center justify-between";
-          document.getElementById(`qIcon_${qIdx}_${idx}`).innerHTML = "<i data-lucide='x' class='w-3.5 h-3.5 text-white/40'></i>";
+          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border border-black/10 bg-black/5 text-appleTextMuted line-through flex items-center justify-between";
+          document.getElementById(`cqIcon_${qIdx}_${idx}`).innerHTML = "<i data-lucide='x' class='w-3.5 h-3.5 text-appleTextMuted'></i>";
         } else {
-          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border border-white/5 bg-transparent text-white/30 flex items-center justify-between";
+          btn.className = "w-full text-left p-2.5 rounded-xl text-xs border border-black/5 bg-transparent text-appleTextMuted opacity-50 flex items-center justify-between";
         }
       });
 
       if (isCorrect) {
-        fb.className = "p-2.5 rounded-xl text-xs bg-white/10 border border-white/20 text-white font-mono";
+        fb.className = "p-2.5 rounded-xl text-xs bg-black/5 border border-black/10 text-appleTextDark font-mono";
         fb.innerHTML = `✅ <strong>Richtig!</strong> ${q.exp}`;
       } else {
-        fb.className = "p-2.5 rounded-xl text-xs bg-white/5 border border-white/10 text-white/70 font-mono";
+        fb.className = "p-2.5 rounded-xl text-xs bg-black/5 border border-black/10 text-appleTextMuted font-mono";
         fb.innerHTML = `❌ <strong>Nicht ganz:</strong> ${q.exp}`;
       }
 
-      updateAppleScore();
+      updateCleanScore();
       lucide.createIcons();
     }
 
-    function updateAppleScore() {
+    function updateCleanScore() {
       let score = 0;
-      Object.keys(userQuizAnswers).forEach(qIdx => {
-        if (userQuizAnswers[qIdx] === quizQuestions[qIdx].correct) score++;
+      Object.keys(cleanQuizAnswers).forEach(qIdx => {
+        if (cleanQuizAnswers[qIdx] === cleanQuizQuestions[qIdx].correct) score++;
       });
-      document.getElementById('apQuizScore').innerText = score;
+      document.getElementById('cleanQuizScore').innerText = score;
     }
 
-    function appleResetQuiz() {
-      userQuizAnswers = {};
-      renderAppleQuiz();
+    function cleanResetQuiz() {
+      cleanQuizAnswers = {};
+      renderCleanQuiz();
     }
 
-    // Init Quiz
-    renderAppleQuiz();
+    // Init Quiz & Select Port 1
+    renderCleanQuiz();
+    selectPort(1);
+    setWifiGen(4);
   </script>
 </body>
 </html>
