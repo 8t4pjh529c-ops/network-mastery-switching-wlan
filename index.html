@@ -473,6 +473,56 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #86868b;
     }
+
+    /* Accessible Focus States */
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid #0071e3;
+      outline-offset: 2px;
+    }
+
+    /* Apple Midnight Pro Dark Mode Overrides */
+    html.dark-theme,
+    html.dark-theme body {
+      background-color: #090d16 !important;
+      color: #f5f5f7 !important;
+    }
+    html.dark-theme header {
+      background: rgba(12, 18, 30, 0.82) !important;
+      border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    html.dark-theme .apple-liquid-glass,
+    html.dark-theme .apple-liquid-card {
+      background: linear-gradient(145deg, rgba(22, 30, 48, 0.86) 0%, rgba(13, 19, 33, 0.72) 100%) !important;
+      border-color: rgba(255, 255, 255, 0.14) !important;
+      box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+      color: #f5f5f7 !important;
+    }
+    html.dark-theme .glass-pill {
+      background: rgba(30, 41, 59, 0.78) !important;
+      border-color: rgba(255, 255, 255, 0.16) !important;
+      color: #f8fafc !important;
+      box-shadow: none !important;
+    }
+    html.dark-theme .text-apple-headline-light {
+      background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 60%, #94a3b8 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+    html.dark-theme .text-appleTextDark,
+    html.dark-theme .text-black {
+      color: #f8fafc !important;
+    }
+    html.dark-theme .text-appleTextMuted {
+      color: #94a3b8 !important;
+    }
+    html.dark-theme .bg-white,
+    html.dark-theme .bg-white\/80,
+    html.dark-theme .bg-white\/70,
+    html.dark-theme .bg-white\/60 {
+      background-color: rgba(15, 23, 42, 0.75) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+      color: #f1f5f9 !important;
+    }
   </style>
 </head>
 <body class="selection:bg-black selection:text-white glass-refraction-grid">
@@ -533,8 +583,35 @@
         <i data-lucide="mic" class="w-3.5 h-3.5 text-black group-hover:text-white transition"></i>
         <span id="globalNotesToggleText">Sprechernotizen</span>
       </button>
+
+      <!-- Dark / Light Mode Toggle -->
+      <button id="themeToggleBtn" type="button" onclick="toggleNetMasteryTheme()" aria-label="Dark / Light Mode umschalten" title="Apple Pure White / Midnight Dark umschalten" class="w-8 h-8 rounded-full flex items-center justify-center glass-pill text-appleTextDark hover:bg-black hover:text-white transition active:scale-90">
+        <span id="themeToggleIcon" class="text-xs leading-none">🌙</span>
+      </button>
     </div>
   </header>
+  <script>
+    (function() {
+      const root = document.documentElement;
+      const saved = localStorage.getItem('net_mastery_theme') || 'light';
+      function applyNetTheme(t) {
+        const ic = document.getElementById('themeToggleIcon');
+        if (t === 'dark') {
+          root.classList.add('dark-theme');
+          if (ic) ic.textContent = '☀️';
+        } else {
+          root.classList.remove('dark-theme');
+          if (ic) ic.textContent = '🌙';
+        }
+      }
+      applyNetTheme(saved);
+      window.toggleNetMasteryTheme = function() {
+        const next = root.classList.contains('dark-theme') ? 'light' : 'dark';
+        localStorage.setItem('net_mastery_theme', next);
+        applyNetTheme(next);
+      };
+    })();
+  </script>
 
   <!-- Right Floating Liquid Glass Slide Indicator -->
   <aside class="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col gap-3 apple-liquid-glass p-3 rounded-full">
